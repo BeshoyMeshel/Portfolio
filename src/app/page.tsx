@@ -356,7 +356,7 @@ export default function Home() {
               Contact
             </span>
             <h3 className="text-2xl font-bold text-white">
-              Let's build something great.
+              Let&apos;s build something great.
             </h3>
             <p className="text-gray-400">I usually reply within 24h.</p>
 
