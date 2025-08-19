@@ -9,6 +9,10 @@ import { FaHome, FaUser, FaTools, FaProjectDiagram, FaPhone } from "react-icons/
 export default function Home() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+  
+  
 
   const logos = [
     { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", name: "HTML" },
@@ -63,6 +67,11 @@ export default function Home() {
     email: "",
     message: "",
   });
+useEffect(() => {
+    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+  }, []);
+
+  if (!windowSize.width) return null; // لو لسة مش جاهز على الكلاينت
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -80,28 +89,28 @@ export default function Home() {
       {/* ===== FLOATING LOGOS FULL PAGE ===== */}
       <div className="fixed inset-0 z-20 pointer-events-none">
         {logos.map((logo, i) => (
-          <motion.div
-            key={i}
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * (window.innerHeight - 100), // بداية داخل الشاشة
-              rotate: Math.random() * 360,
-            }}
-            animate={{
-              y: ["100vh", -100], // يتحرك للأعلى
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 10 + Math.random() * 5,
-              repeat: Infinity,
-              ease: "linear",
-              delay: Math.random() * 3,
-            }}
-            className="absolute"
-          >
-            <Image src={logo.src} alt={logo.name} width={20} height={20} />
-          </motion.div>
-        ))}
+        <motion.div
+          key={i}
+          initial={{
+            x: Math.random() * windowSize.width,
+            y: Math.random() * (windowSize.height - 100),
+            rotate: Math.random() * 360,
+          }}
+          animate={{
+            y: ["100vh", -100],
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 10 + Math.random() * 5,
+            repeat: Infinity,
+            ease: "linear",
+            delay: Math.random() * 3,
+          }}
+          className="absolute"
+        >
+          <Image src={logo.src} alt={logo.name} width={20} height={20} />
+        </motion.div>
+      ))}
       </div>
 
 
@@ -110,7 +119,7 @@ export default function Home() {
         className={`fixed top-0 w-full h-16 md:h-20 z-50 shadow-md transition-all duration-300 border-b border-gray-800 
     ${scrolled ? "bg-black/70 backdrop-blur-md" : "bg-black/100"}`}
       >
-        <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <nav className="max-w-10xl mx-auto flex justify-between  items-center px-16 py-4">
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform duration-300">
             {/* Static dot */}
@@ -126,7 +135,7 @@ export default function Home() {
           </div>
 
           {/* Navigation Links */}
-          <ul className="flex items-center gap-8 text-white font-medium">
+          <ul className="flex items-center gap-12 text-white font-medium">
             {links.map((link) => (
               <li
                 key={link.id}
@@ -226,8 +235,8 @@ export default function Home() {
             <Image
               src="/My Photo.jpg"
               alt="Beshoy"
-              width={320}
-              height={320}
+              width={400}
+              height={400}
               className="rounded-full object-cover"
             />
           </motion.div>
