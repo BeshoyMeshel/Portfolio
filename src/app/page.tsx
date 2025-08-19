@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -8,7 +8,8 @@ import { FaHome, FaUser, FaTools, FaProjectDiagram, FaPhone } from "react-icons/
 
 export default function Home() {
   const [active, setActive] = useState("home");
-  const [scrolled, setScrolled] = useState(false); // هنا عرفنا الـ scrolled
+  const [scrolled, setScrolled] = useState(false);
+
   const logos = [
     { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", name: "HTML" },
     { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", name: "CSS" },
@@ -105,7 +106,8 @@ export default function Home() {
 
       {/* ===== HEADER ===== */}
       <header
-        className={`fixed top-0 w-full h-16 md:h-20 z-50 shadow-md transition-all duration-300 bg-black/90 backdrop-blur-md border-b border-gray-800`}
+        className={`fixed top-0 w-full h-16 md:h-20 z-50 shadow-md transition-all duration-300 border-b border-gray-800 
+    ${scrolled ? "bg-black/70 backdrop-blur-md" : "bg-black/100"}`}
       >
         <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
           {/* Logo */}
