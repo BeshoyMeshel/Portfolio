@@ -64,20 +64,21 @@ export default function Home() {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert("Message sent!");
   };
+
 
   return (
     <div className="relative bg-black text-white overflow-x-hidden">
 
       {/* ===== FLOATING LOGOS FULL PAGE ===== */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
+      <div className="fixed inset-0 z-20 pointer-events-none">
         {logos.map((logo, i) => (
           <motion.div
             key={i}
@@ -142,8 +143,8 @@ export default function Home() {
                 {link.icon}
                 <span
                   className={`hidden md:inline relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-blue-500 after:transition-all after:duration-300 ${active === link.id
-                      ? "after:w-full text-blue-500"
-                      : "after:w-0 hover:after:w-full"
+                    ? "after:w-full text-blue-500"
+                    : "after:w-0 hover:after:w-full"
                     }`}
                 >
                   {link.label}
