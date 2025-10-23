@@ -4,28 +4,56 @@ import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { FaHome, FaUser, FaTools, FaProjectDiagram, FaPhone } from "react-icons/fa";
+import {
+  FaHome,
+  FaUser,
+  FaTools,
+  FaProjectDiagram,
+  FaPhone,
+} from "react-icons/fa";
 
 export default function Home() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-
-  
-  
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   const logos = [
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", name: "HTML" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", name: "CSS" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", name: "JavaScript" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", name: "React" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", name: "Next.js" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", name: "Tailwind CSS" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", name: "TypeScript" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg", name: "Bootstrap" },
-    { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg", name: "Material-UI" },
-
-
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      name: "HTML",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      name: "CSS",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      name: "JavaScript",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      name: "React",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      name: "Next.js",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      name: "Tailwind CSS",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      name: "TypeScript",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg",
+      name: "Bootstrap",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+      name: "Material-UI",
+    },
   ];
 
   const links = [
@@ -40,20 +68,20 @@ export default function Home() {
     {
       id: 1,
       title: "German cars Website",
-      description: "German Cars is a responsive web platform built with Next.js, TypeScript, and Tailwind CSS, featuring smooth Framer Motion animations. It showcases premium German brands like BMW, Audi, Porsche, and Mercedes-Benz with detailed car insights in a sleek browsing experience.",
+      description:
+        "German Cars is a responsive web platform built with Next.js, TypeScript, and Tailwind CSS, featuring smooth Framer Motion animations. It showcases premium German brands like BMW, Audi, Porsche, and Mercedes-Benz with detailed car insights in a sleek browsing experience.",
       image: "/German cars Photo.png",
       link: "https://german-cars-lmtp.vercel.app/",
     },
     {
       id: 2,
       title: "Todo-list App",
-      description: "A clean and interactive To-Do List app built with Next.js and TypeScript, styled using Tailwind CSS. Users can add, edit, and delete tasks with smooth animations and persistence (e.g., via localStorage). A lightweight yet functional app for managing daily to-dos.",
+      description:
+        "A clean and interactive To-Do List app built with Next.js and TypeScript, styled using Tailwind CSS. Users can add, edit, and delete tasks with smooth animations and persistence (e.g., via localStorage). A lightweight yet functional app for managing daily to-dos.",
       image: "/Todo-list Photo.png",
       link: "https://todo-list-7w9.pages.dev/",
     },
-
   ];
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,13 +95,17 @@ export default function Home() {
     email: "",
     message: "",
   });
-useEffect(() => {
+  useEffect(() => {
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
   }, []);
 
   if (!windowSize.width) return null; // لو لسة مش جاهز على الكلاينت
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -82,37 +114,34 @@ useEffect(() => {
     alert("Message sent!");
   };
 
-
   return (
     <div className="relative bg-black text-white overflow-x-hidden">
-
       {/* ===== FLOATING LOGOS FULL PAGE ===== */}
       <div className="fixed inset-0 z-20 pointer-events-none">
         {logos.map((logo, i) => (
-        <motion.div
-          key={i}
-          initial={{
-            x: Math.random() * windowSize.width,
-            y: Math.random() * (windowSize.height - 100),
-            rotate: Math.random() * 360,
-          }}
-          animate={{
-            y: ["100vh", -100],
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 10 + Math.random() * 5,
-            repeat: Infinity,
-            ease: "linear",
-            delay: Math.random() * 3,
-          }}
-          className="absolute"
-        >
-          <Image src={logo.src} alt={logo.name} width={20} height={20} />
-        </motion.div>
-      ))}
+          <motion.div
+            key={i}
+            initial={{
+              x: Math.random() * windowSize.width,
+              y: Math.random() * (windowSize.height - 100),
+              rotate: Math.random() * 360,
+            }}
+            animate={{
+              y: ["100vh", -100],
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: 10 + Math.random() * 5,
+              repeat: Infinity,
+              ease: "linear",
+              delay: Math.random() * 3,
+            }}
+            className="absolute"
+          >
+            <Image src={logo.src} alt={logo.name} width={20} height={20} />
+          </motion.div>
+        ))}
       </div>
-
 
       {/* ===== HEADER ===== */}
       <header
@@ -128,7 +157,7 @@ useEffect(() => {
             {/* Name */}
             <span
               className="text-2xl md:text-4xl font-bold tracking-wide text-white"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              style={{ fontFamily: "Inter, sans-serif" }}
             >
               Beshoy
             </span>
@@ -139,22 +168,27 @@ useEffect(() => {
             {links.map((link) => (
               <li
                 key={link.id}
-                className={`flex items-center gap-1 cursor-pointer relative transition-colors duration-300 ${active === link.id ? "text-blue-500" : "text-white"
-                  }`}
+                className={`flex items-center gap-1 cursor-pointer relative transition-colors duration-300 ${
+                  active === link.id ? "text-blue-500" : "text-white"
+                }`}
                 onClick={() => {
                   setActive(link.id);
                   const section = document.getElementById(link.id);
                   if (section) {
-                    section.scrollIntoView({ behavior: "smooth", block: "start" });
+                    section.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
                   }
                 }}
               >
                 {link.icon}
                 <span
-                  className={`hidden md:inline relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-blue-500 after:transition-all after:duration-300 ${active === link.id
-                    ? "after:w-full text-blue-500"
-                    : "after:w-0 hover:after:w-full"
-                    }`}
+                  className={`hidden md:inline relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-blue-500 after:transition-all after:duration-300 ${
+                    active === link.id
+                      ? "after:w-full text-blue-500"
+                      : "after:w-0 hover:after:w-full"
+                  }`}
                 >
                   {link.label}
                 </span>
@@ -164,11 +198,6 @@ useEffect(() => {
         </nav>
       </header>
 
-
-
-
-
-
       {/* ===== HERO ===== */}
       <section
         id="home"
@@ -176,19 +205,25 @@ useEffect(() => {
       >
         {/* Text */}
         <div className="max-w-lg space-y-6 text-center md:text-left">
-
           <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blue-500/20 text-blue-400 font-semibold text-sm tracking-wide">
             <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
             FRONTEND DEVELOPER
           </span>
-
 
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
             Beshoy Meshel
           </h1>
 
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-            I build <span className="text-blue-400 font-semibold">fast, accessible, and scalable</span> web UIs. Let’s craft <span className="text-blue-400 font-semibold">delightful user experiences</span>.
+            I build{" "}
+            <span className="text-blue-400 font-semibold">
+              fast, accessible, and scalable
+            </span>{" "}
+            web UIs. Let’s craft{" "}
+            <span className="text-blue-400 font-semibold">
+              delightful user experiences
+            </span>
+            .
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 mt-4 justify-center md:justify-start">
@@ -208,9 +243,26 @@ useEffect(() => {
 
           {/* Socials */}
           <div className="flex gap-6 text-2xl text-gray-400 justify-center md:justify-start mt-6">
-            <a href="https://github.com/besho157" target="_blank" className="hover:text-blue-400 transition"><FaGithub /></a>
-            <a href="https://www.linkedin.com/in/beshoy-meshel-8177bb268/" target="_blank" className="hover:text-blue-400 transition"><FaLinkedin /></a>
-            <a href="mailto:beshoymeshel15@gmail.com" className="hover:text-blue-400 transition"><SiGmail /></a>
+            <a
+              href="https://github.com/BeshoyMeshel"
+              target="_blank"
+              className="hover:text-blue-400 transition"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/beshoy-meshel-8177bb268/"
+              target="_blank"
+              className="hover:text-blue-400 transition"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="mailto:beshoymeshel15@gmail.com"
+              className="hover:text-blue-400 transition"
+            >
+              <SiGmail />
+            </a>
           </div>
         </div>
 
@@ -243,7 +295,6 @@ useEffect(() => {
         </motion.div>
       </section>
 
-
       {/* ===== ABOUT ===== */}
       <section
         id="about"
@@ -254,7 +305,19 @@ useEffect(() => {
         </h2>
 
         <p className="max-w-3xl text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
-          I’m a <span className="text-blue-400 font-semibold">passionate Frontend Developer</span> who loves building <span className="text-blue-400 font-semibold">fast, interactive, and accessible web applications</span>. Always learning and pushing limits to deliver <span className="text-blue-400 font-semibold">clean, scalable, and user-friendly products</span>.
+          I’m a{" "}
+          <span className="text-blue-400 font-semibold">
+            passionate Frontend Developer
+          </span>{" "}
+          who loves building{" "}
+          <span className="text-blue-400 font-semibold">
+            fast, interactive, and accessible web applications
+          </span>
+          . Always learning and pushing limits to deliver{" "}
+          <span className="text-blue-400 font-semibold">
+            clean, scalable, and user-friendly products
+          </span>
+          .
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl text-left">
@@ -286,12 +349,13 @@ useEffect(() => {
         >
           Download CV
         </a>
-
       </section>
 
-
       {/* ===== SKILLS ===== */}
-      <section id="skills" className="min-h-screen flex flex-col items-center justify-center px-8 text-center z-10">
+      <section
+        id="skills"
+        className="min-h-screen flex flex-col items-center justify-center px-8 text-center z-10"
+      >
         <h2 className="text-4xl font-bold text-blue-400 mb-12">Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full max-w-6xl">
           {logos.map((logo, i) => (
@@ -331,9 +395,7 @@ useEffect(() => {
               <h3 className="text-xl md:text-2xl font-semibold text-blue-400 mb-2">
                 {project.title}
               </h3>
-              <p className="text-gray-400 flex-1 mb-4">
-                {project.description}
-              </p>
+              <p className="text-gray-400 flex-1 mb-4">{project.description}</p>
               <a
                 href={project.link}
                 target="_blank"
@@ -347,8 +409,6 @@ useEffect(() => {
         </div>
       </section>
 
-
-
       {/* ===== CONTACT ===== */}
       <section
         id="contact"
@@ -359,7 +419,6 @@ useEffect(() => {
         </h2>
 
         <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12">
-
           {/* معلومات الاتصال */}
           <div className="bg-gray-800 p-10 rounded-2xl shadow-2xl space-y-6 hover:scale-105 transition-transform duration-300">
             <span className="text-xs uppercase tracking-widest text-gray-400">
@@ -373,16 +432,15 @@ useEffect(() => {
             <div className="space-y-3 mt-6 text-left text-gray-200">
               <p className="flex items-center justify-between bg-gray-700 p-3 rounded hover:bg-gray-600 transition cursor-pointer">
                 <span>
-                  <span className="font-semibold">Email:</span> beshomeshel15@gmail.com
+                  <span className="font-semibold">Email:</span>{" "}
+                  beshomeshel15@gmail.com
                 </span>
-
               </p>
 
               <p className="flex items-center justify-between bg-gray-700 p-3 rounded hover:bg-gray-600 transition cursor-pointer">
                 <span>
                   <span className="font-semibold">Phone:</span> +201275809921
                 </span>
-
               </p>
 
               <p className="bg-gray-700 p-3 rounded">
@@ -391,7 +449,8 @@ useEffect(() => {
             </div>
 
             <p className="text-gray-400 text-sm mt-4">
-              Prefer email? Use the form or click the address to open your mail app.
+              Prefer email? Use the form or click the address to open your mail
+              app.
             </p>
           </div>
 
@@ -401,7 +460,9 @@ useEffect(() => {
             className="bg-gray-900 p-10 border border-gray-700 rounded-2xl shadow-2xl space-y-5 hover:scale-105 transition-transform duration-300"
           >
             <div>
-              <label className="block text-sm mb-2 text-gray-300">Your Name</label>
+              <label className="block text-sm mb-2 text-gray-300">
+                Your Name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -414,7 +475,9 @@ useEffect(() => {
             </div>
 
             <div>
-              <label className="block text-sm mb-2 text-gray-300">Your Email</label>
+              <label className="block text-sm mb-2 text-gray-300">
+                Your Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -427,7 +490,9 @@ useEffect(() => {
             </div>
 
             <div>
-              <label className="block text-sm mb-2 text-gray-300">Message</label>
+              <label className="block text-sm mb-2 text-gray-300">
+                Message
+              </label>
               <textarea
                 name="message"
                 value={form.message}
@@ -456,37 +521,81 @@ useEffect(() => {
         </div>
       </section>
 
-
       {/* ===== FOOTER ===== */}
       <footer className="bg-black py-12 mt-12 text-gray-400 z-10 relative border-t border-gray-800">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
           {/* Column 1 */}
           <div>
-            <h3 className="text-lg font-semibold text-blue-500 mb-3">Beshoy Meshel</h3>
+            <h3 className="text-lg font-semibold text-blue-500 mb-3">
+              Beshoy Meshel
+            </h3>
             <p className="text-sm text-gray-500">
-              Frontend Developer passionate about crafting modern and scalable web apps.
+              Frontend Developer passionate about crafting modern and scalable
+              web apps.
             </p>
           </div>
 
           {/* Column 2 - Links */}
           <div>
-            <h3 className="text-lg font-semibold text-blue-500 mb-3">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-blue-500 mb-3">
+              Quick Links
+            </h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#home" className="hover:text-blue-400">Home</a></li>
-              <li><a href="#about" className="hover:text-blue-400">About</a></li>
-              <li><a href="#skills" className="hover:text-blue-400">Skills</a></li>
-              <li><a href="#projects" className="hover:text-blue-400">Projects</a></li>
-              <li><a href="#contact" className="hover:text-blue-400">Contact</a></li>
+              <li>
+                <a href="#home" className="hover:text-blue-400">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="hover:text-blue-400">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#skills" className="hover:text-blue-400">
+                  Skills
+                </a>
+              </li>
+              <li>
+                <a href="#projects" className="hover:text-blue-400">
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-blue-400">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Column 3 - Socials */}
           <div>
-            <h3 className="text-lg font-semibold text-blue-500 mb-3">Connect</h3>
+            <h3 className="text-lg font-semibold text-blue-500 mb-3">
+              Connect
+            </h3>
             <div className="flex gap-6 text-xl">
-              <a href="https://github.com/besho157" target="_blank" className="hover:text-blue-400"><FaGithub /></a>
-              <a href="https://www.linkedin.com/in/beshoy-meshel-8177bb268/" target="_blank" className="hover:text-blue-400"><FaLinkedin /></a>
-              <a href="https://www.facebook.com/besho.meshei" target="_blank" className="hover:text-blue-400"><FaFacebook /></a>
+              <a
+                href="https://github.com/besho157"
+                target="_blank"
+                className="hover:text-blue-400"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/beshoy-meshel-8177bb268/"
+                target="_blank"
+                className="hover:text-blue-400"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://www.facebook.com/besho.meshei"
+                target="_blank"
+                className="hover:text-blue-400"
+              >
+                <FaFacebook />
+              </a>
             </div>
           </div>
         </div>
