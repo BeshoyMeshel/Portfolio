@@ -343,7 +343,7 @@ export default function Home() {
         </div>
 
         <a
-          href="/Beshoy_MeshelCV.pdf"
+          href="/Beshoy_Meshel_FrontEnd_Developer.pdf"
           download
           className="mt-10 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-semibold"
         >
