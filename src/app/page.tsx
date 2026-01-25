@@ -869,7 +869,7 @@ export default function Home() {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="beshomeshel15@gmail.com"
+                placeholder="your email"
                 className="w-full p-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 required
               />
