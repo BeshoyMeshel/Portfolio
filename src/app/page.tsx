@@ -155,6 +155,52 @@ export default function Home() {
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
   }, []);
 
+  // Scroll-spy: Update active link based on scroll position using Intersection Observer
+  useEffect(() => {
+    const sectionIds = ["home", "about", "experience", "skills", "projects", "contact"];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
+
+    if (sections.length === 0) return;
+
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      // Find the entry with the highest intersection ratio
+      let maxRatio = 0;
+      let activeId = sectionIds[0];
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          activeId = entry.target.id;
+        }
+      });
+
+      // If we found an intersecting section, update active state
+      if (maxRatio > 0) {
+        setActive(activeId);
+      }
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
   if (!windowSize.width) return null; 
 
   const handleChange = (
