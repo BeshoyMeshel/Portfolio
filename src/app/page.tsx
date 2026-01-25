@@ -158,46 +158,97 @@ export default function Home() {
   // Scroll-spy: Update active link based on scroll position using Intersection Observer
   useEffect(() => {
     const sectionIds = ["home", "about", "experience", "skills", "projects", "contact"];
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter((section): section is HTMLElement => section !== null);
+    
+    // Wait for DOM to be ready
+    const timeoutId = setTimeout(() => {
+      const sections = sectionIds
+        .map((id) => document.getElementById(id))
+        .filter((section): section is HTMLElement => section !== null);
 
-    if (sections.length === 0) return;
+      if (sections.length === 0) return;
 
-    const observerOptions: IntersectionObserverInit = {
-      root: null,
-      rootMargin: "-20% 0px -70% 0px",
-      threshold: 0,
-    };
+      const observerOptions: IntersectionObserverInit = {
+        root: null,
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      };
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      // Find the entry with the highest intersection ratio
-      let maxRatio = 0;
-      let activeId = sectionIds[0];
+      const observerCallback = (entries: IntersectionObserverEntry[]) => {
+        // Find the entry with the highest intersection ratio that's currently intersecting
+        let maxRatio = 0;
+        let activeId = sectionIds[0];
 
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-          maxRatio = entry.intersectionRatio;
-          activeId = entry.target.id;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const ratio = entry.intersectionRatio;
+            if (ratio > maxRatio) {
+              maxRatio = ratio;
+              activeId = entry.target.id;
+            }
+          }
+        });
+
+        // Update active state if we found an intersecting section
+        if (maxRatio > 0) {
+          setActive(activeId);
+        } else {
+          // Fallback: find the section closest to the top of the viewport
+          const scrollPosition = window.scrollY + window.innerHeight / 3;
+          let closestSection = sectionIds[0];
+          let closestDistance = Infinity;
+
+          sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            const sectionTop = window.scrollY + rect.top;
+            const distance = Math.abs(scrollPosition - sectionTop);
+
+            if (distance < closestDistance && sectionTop <= scrollPosition) {
+              closestDistance = distance;
+              closestSection = section.id;
+            }
+          });
+
+          setActive(closestSection);
         }
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+      sections.forEach((section) => {
+        observer.observe(section);
       });
 
-      // If we found an intersecting section, update active state
-      if (maxRatio > 0) {
-        setActive(activeId);
-      }
-    };
+      // Initial check on mount - determine which section is currently visible
+      const checkInitialSection = () => {
+        const viewportTop = window.scrollY + window.innerHeight * 0.3;
+        let closestSection = sectionIds[0];
+        let closestDistance = Infinity;
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          const sectionTop = window.scrollY + rect.top;
+          const distance = Math.abs(viewportTop - sectionTop);
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+          if (distance < closestDistance && sectionTop <= viewportTop + 100) {
+            closestDistance = distance;
+            closestSection = section.id;
+          }
+        });
+
+        setActive(closestSection);
+      };
+
+      checkInitialSection();
+
+      return () => {
+        sections.forEach((section) => {
+          observer.unobserve(section);
+        });
+      };
+    }, 100);
 
     return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
+      clearTimeout(timeoutId);
     };
   }, []);
 
