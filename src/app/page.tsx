@@ -502,7 +502,7 @@ export default function Home() {
           className="mt-10"
         >
           <a
-            href="/Beshoy-Meshel -Front-end developer.pdf"
+            href="/Beshoy Meshel -Frontend developer.pdf"
             download
             className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-semibold shadow-lg shadow-blue-500/50 hover:shadow-blue-500/70 hover:scale-105"
           >
