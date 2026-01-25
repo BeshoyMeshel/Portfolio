@@ -122,7 +122,7 @@ export default function Home() {
       title: "Course Master Platform (2023)",
       description:
         "Built an e-learning platform for teachers and students. Implemented course uploads, attendance tracking, and multi-tenant features. Worked on scalable UI flows and dashboard components.",
-      image: "/cm1.png",
+      image: "/cm.png",
       link: "#",
       tech: "React, Next.js, TypeScript, Tailwind CSS",
       type: "Client Project (Private)",
@@ -818,7 +818,7 @@ export default function Home() {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="you@example.com"
+                placeholder="beshomeshel15@gmail.com"
                 className="w-full p-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 required
               />
