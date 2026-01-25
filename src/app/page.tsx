@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import {
   FaHome,
   FaUser,
+  FaBriefcase,
   FaTools,
   FaProjectDiagram,
   FaPhone,
@@ -19,46 +20,67 @@ export default function Home() {
 
   const logos = [
     {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      name: "HTML",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      name: "CSS",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      name: "JavaScript",
-    },
-    {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      name: "React",
+      name: "React.js",
     },
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       name: "Next.js",
     },
     {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      name: "TypeScript",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      name: "JavaScript (ES6+)",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      name: "HTML5",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      name: "CSS3",
+    },
+    {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
       name: "Tailwind CSS",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-      name: "TypeScript",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+      name: "Material UI",
     },
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg",
       name: "Bootstrap",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
-      name: "Material-UI",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      name: "Node.js",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      name: "Git",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      name: "Express",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      name: "GitHub",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      name: "Figma",
     },
   ];
 
   const links = [
     { id: "home", label: "Home", icon: <FaHome /> },
     { id: "about", label: "About Me", icon: <FaUser /> },
+    { id: "experience", label: "Experience", icon: <FaBriefcase /> },
     { id: "skills", label: "Skills", icon: <FaTools /> },
     { id: "projects", label: "Projects", icon: <FaProjectDiagram /> },
     { id: "contact", label: "Contact Me", icon: <FaPhone /> },
@@ -67,25 +89,59 @@ export default function Home() {
   const projects = [
     {
       id: 1,
-      title: "German cars Website",
+      title: "Todo Board Application",
       description:
-        "German Cars is a responsive web platform built with Next.js, TypeScript, and Tailwind CSS, featuring smooth Framer Motion animations. It showcases premium German brands like BMW, Audi, Porsche, and Mercedes-Benz with detailed car insights in a sleek browsing experience.",
-      image: "/German cars Photo.png",
-      link: "https://german-cars-lmtp.vercel.app/",
+        "A task management and collaboration board. Implemented task creation, editing, and status management with clean UI workflows. Focused on scalable component architecture and user experience.",
+      image: "/Todo-list Photo.png",
+      link: "https://todo.matrixmindsit.com",
+      tech: "React, Next.js, TypeScript, Tailwind CSS",
+      type: "Personal Project",
     },
     {
       id: 2,
-      title: "Todo-list App",
+      title: "Safety Zone (2025)",
       description:
-        "A clean and interactive To-Do List app built with Next.js and TypeScript, styled using Tailwind CSS. Users can add, edit, and delete tasks with smooth animations and persistence (e.g., via localStorage). A lightweight yet functional app for managing daily to-dos.",
-      image: "/Todo-list Photo.png",
-      link: "https://todo-list-7w9.pages.dev/",
+        "Developed modern, responsive web applications using React, Next.js, and TypeScript. Implemented reusable UI components using Tailwind CSS. Translated Figma designs into clean, maintainable frontend code. Ensured cross-browser compatibility and consistent UI behavior.",
+      image: "/safty zone.png",
+      link: "#",
+      tech: "React, Next.js, TypeScript, Tailwind CSS",
+      type: "Client Project (Private)",
+    },
+    {
+      id: 3,
+      title: "Rovero (2023)",
+      description:
+        "Developed a mobile application for factory cashback management. Implemented multi-role permissions and user-based edit history. Focused on clean architecture and maintainable UI logic.",
+      image: "/rovero1.png",
+      link: "#",
+      tech: "React Native, TypeScript",
+      type: "Client Project (Private)",
+    },
+    {
+      id: 4,
+      title: "Course Master Platform (2023)",
+      description:
+        "Built an e-learning platform for teachers and students. Implemented course uploads, attendance tracking, and multi-tenant features. Worked on scalable UI flows and dashboard components.",
+      image: "/cm1.png",
+      link: "#",
+      tech: "React, Next.js, TypeScript, Tailwind CSS",
+      type: "Client Project (Private)",
+    },
+    {
+      id: 5,
+      title: "Oriented Coders Website & Dashboard (2022-2023)",
+      description:
+        "Developed the official marketing website. Built an internal dashboard to manage jobs, news, reviews, and applications. Ensured responsive layouts and cross-browser compatibility.",
+      image: "/oc-dashboard1.png",
+      link: "#",
+      tech: "React, Next.js, TypeScript, Tailwind CSS",
+      type: "Client Project (Private)",
     },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // بعد 50px يظهر الـ blur
+      setScrolled(window.scrollY > 50); 
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -99,7 +155,7 @@ export default function Home() {
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
   }, []);
 
-  if (!windowSize.width) return null; // لو لسة مش جاهز على الكلاينت
+  if (!windowSize.width) return null; 
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -116,7 +172,6 @@ export default function Home() {
 
   return (
     <div className="relative bg-black text-white overflow-x-hidden">
-      {/* ===== FLOATING LOGOS FULL PAGE ===== */}
       <div className="fixed inset-0 z-20 pointer-events-none">
         {logos.map((logo, i) => (
           <motion.div
@@ -143,18 +198,14 @@ export default function Home() {
         ))}
       </div>
 
-      {/* ===== HEADER ===== */}
       <header
         className={`fixed top-0 w-full h-16 md:h-20 z-50 shadow-md transition-all duration-300 border-b border-gray-800 
     ${scrolled ? "bg-black/70 backdrop-blur-md" : "bg-black/100"}`}
       >
         <nav className="max-w-10xl mx-auto flex justify-between  items-center px-16 py-4">
-          {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform duration-300">
-            {/* Static dot */}
             <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
 
-            {/* Name */}
             <span
               className="text-2xl md:text-4xl font-bold tracking-wide text-white"
               style={{ fontFamily: "Inter, sans-serif" }}
@@ -215,15 +266,13 @@ export default function Home() {
           </h1>
 
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-            I build{" "}
+            Frontend Developer with 2 years of experience building{" "}
             <span className="text-blue-400 font-semibold">
-              fast, accessible, and scalable
+              responsive, scalable, and high-performance
             </span>{" "}
-            web UIs. Let’s craft{" "}
-            <span className="text-blue-400 font-semibold">
-              delightful user experiences
-            </span>
-            .
+            web applications using JavaScript, TypeScript, React.js, and Next.js. 
+            Focused on modern UI/UX best practices, component architecture, state management, 
+            and performance optimization.
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 mt-4 justify-center md:justify-start">
@@ -300,55 +349,176 @@ export default function Home() {
         id="about"
         className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-16 bg-black text-center text-white"
       >
-        <h2 className="text-4xl md:text-5xl font-extrabold text-blue-500 mb-8 tracking-wide">
-          About Me
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold text-blue-500 mb-4 tracking-wide">
+            About Me
+          </h2>
+          <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl text-gray-300 text-lg md:text-xl leading-relaxed mb-12"
+        >
+          <p>
+            I am a Frontend Developer with 2 years of experience building{" "}
+            <span className="text-blue-400 font-semibold">
+              responsive, scalable, and high-performance
+            </span>{" "}
+            web applications using JavaScript, TypeScript, React.js, and Next.js. 
+            I focus on modern UI/UX best practices, component architecture, state management, 
+            and performance optimization. I have experience building{" "}
+            <span className="text-blue-400 font-semibold">
+              enterprise-level dashboards and complex applications
+            </span>
+            , delivering clean and maintainable code. I am currently expanding my backend skills 
+            with Node.js, Express, and API integrations.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl w-full text-left">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl shadow-2xl hover:scale-105 hover:shadow-blue-500/20 transition-all duration-300 border border-gray-800 hover:border-blue-500/50"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                <FaBriefcase className="text-blue-400 text-xl" />
+              </div>
+              <h3 className="text-2xl font-bold text-blue-400">Experience</h3>
+            </div>
+            <ul className="list-none text-gray-300 space-y-4">
+              <li className="border-l-2 border-blue-500/50 pl-4">
+                <span className="font-semibold text-blue-400 block">Frontend Developer</span>
+                <span className="text-sm text-gray-400">Matrix Minds IT | 2025 - Present</span>
+              </li>
+              <li className="border-l-2 border-blue-500/50 pl-4">
+                <span className="font-semibold text-blue-400 block">Frontend Developer</span>
+                <span className="text-sm text-gray-400">Oriented Coders | Oct 2022 - Oct 2023</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl shadow-2xl hover:scale-105 hover:shadow-blue-500/20 transition-all duration-300 border border-gray-800 hover:border-blue-500/50"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                <FaUser className="text-blue-400 text-xl" />
+              </div>
+              <h3 className="text-2xl font-bold text-blue-400">Education</h3>
+            </div>
+            <ul className="list-none text-gray-300 space-y-3 mb-6">
+              <li className="border-l-2 border-blue-500/50 pl-4">
+                <span className="font-semibold text-blue-400 block">Bachelor of Law</span>
+                <span className="text-sm text-gray-400">Assiut University | 2019 - 2023</span>
+              </li>
+            </ul>
+            <div className="flex items-center gap-3 mb-4 mt-6">
+              <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                <span className="text-blue-400 text-xl">🌐</span>
+              </div>
+              <h3 className="text-2xl font-bold text-blue-400">Languages</h3>
+            </div>
+            <ul className="list-none text-gray-300 space-y-2">
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                Arabic: Native
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                English: Advanced
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-10"
+        >
+          <a
+            href="/Beshoy-Meshel -Front-end developer.pdf"
+            download
+            className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-semibold shadow-lg shadow-blue-500/50 hover:shadow-blue-500/70 hover:scale-105"
+          >
+            Download CV
+          </a>
+        </motion.div>
+      </section>
+
+      {/* ===== EXPERIENCE ===== */}
+      <section
+        id="experience"
+        className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-16 bg-black text-center text-white"
+      >
+        <h2 className="text-4xl md:text-5xl font-extrabold text-blue-500 mb-12 tracking-wide">
+          Work Experience
         </h2>
 
-        <p className="max-w-3xl text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
-          I’m a{" "}
-          <span className="text-blue-400 font-semibold">
-            passionate Frontend Developer
-          </span>{" "}
-          who loves building{" "}
-          <span className="text-blue-400 font-semibold">
-            fast, interactive, and accessible web applications
-          </span>
-          . Always learning and pushing limits to deliver{" "}
-          <span className="text-blue-400 font-semibold">
-            clean, scalable, and user-friendly products
-          </span>
-          .
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl text-left">
-          <div className="bg-gray-900 p-6 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
-            <h3 className="text-xl font-bold text-blue-500 mb-2">Skills</h3>
-            <ul className="list-disc list-inside text-gray-300 space-y-1">
-              <li>HTML, CSS, JavaScript, TypeScript</li>
-              <li>React, Next.js, Tailwind CSS</li>
-              <li>Responsive & Accessible Design</li>
-              <li>Version Control (Git)</li>
+        <div className="max-w-4xl w-full space-y-8">
+          <div className="bg-gray-900 p-8 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 text-left">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 className="text-2xl font-bold text-blue-400 mb-1">
+                  Frontend Developer
+                </h3>
+                <p className="text-lg text-gray-300">Matrix Minds IT</p>
+              </div>
+              <span className="text-gray-400 text-sm md:text-base mt-2 md:mt-0">
+                2025 - Present
+              </span>
+            </div>
+            <ul className="list-disc list-inside text-gray-300 space-y-2 mt-4">
+              <li>Developed and maintained frontend features using React.js and Next.js</li>
+              <li>Built responsive user interfaces optimized for desktop and mobile devices</li>
+              <li>Integrated UI components with backend REST APIs</li>
+              <li>Collaborated with designers and backend developers to deliver production-ready features</li>
+              <li>Worked on form-based and workflow-driven interfaces to improve usability</li>
             </ul>
           </div>
 
-          <div className="bg-gray-900 p-6 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
-            <h3 className="text-xl font-bold text-blue-500 mb-2">Interests</h3>
-            <ul className="list-disc list-inside text-gray-300 space-y-1">
-              <li>Web Performance Optimization</li>
-              <li>Learning New Frameworks & Libraries</li>
-              <li>UI/UX Design Principles</li>
-              <li>Open Source Contribution</li>
+          <div className="bg-gray-900 p-8 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 text-left">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h3 className="text-2xl font-bold text-blue-400 mb-1">
+                  Frontend Developer
+                </h3>
+                <p className="text-lg text-gray-300">Oriented Coders</p>
+              </div>
+              <span className="text-gray-400 text-sm md:text-base mt-2 md:mt-0">
+                Oct 2022 - Oct 2023
+              </span>
+            </div>
+            <ul className="list-disc list-inside text-gray-300 space-y-2 mt-4">
+              <li>Developed modern, responsive web applications using React, Next.js, and TypeScript</li>
+              <li>Implemented reusable UI components using Tailwind CSS</li>
+              <li>Translated Figma designs into clean, maintainable frontend code</li>
+              <li>Ensured cross-browser compatibility and consistent UI behavior</li>
+              <li>Developed a responsive admin dashboard with authentication and form-based workflows</li>
+              <li>Integrated frontend features with backend REST APIs</li>
+              <li>Built reusable and scalable UI components with a focus on performance and accessibility</li>
             </ul>
           </div>
         </div>
-
-        <a
-          href="/Beshoy_Meshel_FrontEnd_Developer.pdf"
-          download
-          className="mt-10 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-semibold"
-        >
-          Download CV
-        </a>
       </section>
 
       {/* ===== SKILLS ===== */}
@@ -356,17 +526,80 @@ export default function Home() {
         id="skills"
         className="min-h-screen flex flex-col items-center justify-center px-8 text-center z-10"
       >
-        <h2 className="text-4xl font-bold text-blue-400 mb-12">Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full max-w-6xl">
-          {logos.map((logo, i) => (
-            <div
-              key={i}
-              className="bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center"
-            >
-              <Image src={logo.src} alt={logo.name} width={80} height={80} />
-              <p className="mt-3 text-gray-300 font-medium">{logo.name}</p>
+        <h2 className="text-4xl font-bold text-blue-400 mb-12">Technical Skills</h2>
+        <div className="max-w-6xl w-full space-y-8">
+          <div>
+            <h3 className="text-2xl font-semibold text-blue-300 mb-6">Frontend Technologies</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {logos.slice(0, 6).map((logo, i) => (
+                <div
+                  key={i}
+                  className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center"
+                >
+                  <Image src={logo.src} alt={logo.name} width={60} height={60} />
+                  <p className="mt-3 text-gray-300 font-medium text-sm">{logo.name}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-blue-300 mb-6">UI & Styling</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {logos.slice(6, 9).map((logo, i) => (
+                <div
+                  key={i}
+                  className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center"
+                >
+                  <Image src={logo.src} alt={logo.name} width={60} height={60} />
+                  <p className="mt-3 text-gray-300 font-medium text-sm">{logo.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-blue-300 mb-6">Backend & APIs</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
+                <Image src={logos[9].src} alt={logos[9].name} width={60} height={60} />
+                <p className="mt-3 text-gray-300 font-medium text-sm">{logos[9].name}</p>
+              </div>
+              <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-blue-400"/>
+                  <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-blue-400"/>
+                  <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-blue-400"/>
+                </svg>
+                <p className="mt-3 text-gray-300 font-medium text-sm">RESTful APIs</p>
+              </div>
+              <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
+                <Image src={logos[11].src} alt={logos[11].name} width={60} height={60} />
+                <p className="mt-3 text-gray-300 font-medium text-sm">{logos[11].name}</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-blue-300 mb-6">Tools & Practices</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
+                <Image src={logos[10].src} alt={logos[10].name} width={60} height={60} />
+                <p className="mt-3 text-gray-300 font-medium text-sm">{logos[10].name}</p>
+              </div>
+              <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
+                <Image src={logos[12].src} alt={logos[12].name} width={60} height={60} />
+                <p className="mt-3 text-gray-300 font-medium text-sm">{logos[12].name}</p>
+              </div>
+              <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-blue-400"/>
+                </svg>
+                <p className="mt-3 text-gray-300 font-medium text-sm">Performance Optimization</p>
+              </div>
+              <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
+                <Image src={logos[13].src} alt={logos[13].name} width={60} height={60} />
+                <p className="mt-3 text-gray-300 font-medium text-sm">UI/UX ({logos[13].name})</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -375,36 +608,92 @@ export default function Home() {
         id="projects"
         className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-16 bg-black text-center text-white relative z-10"
       >
-        <h2 className="text-4xl md:text-5xl font-extrabold text-blue-500 mb-12 tracking-wide">
-          Projects
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold text-blue-500 mb-4 tracking-wide">
+            Projects
+          </h2>
+          <div className="w-24 h-1 bg-blue-500 mx-auto mb-12"></div>
+        </motion.div>
 
-        <div className="grid gap-10 max-w-4xl w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto-fit minmax(300px, 1fr)">
-          {projects.map((project) => (
-            <div
+        <div className="grid gap-8 max-w-6xl w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <motion.div
               key={project.id}
-              className="bg-gray-900 p-6 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 flex flex-col"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 flex flex-col overflow-hidden border border-gray-800 hover:border-blue-500/50 group"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={250}
-                className="rounded-xl mb-4 w-full object-cover"
-              />
-              <h3 className="text-xl md:text-2xl font-semibold text-blue-400 mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-400 flex-1 mb-4">{project.description}</p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition font-semibold"
-              >
-                View Project
-              </a>
-            </div>
+              {/* Image container with overlay on hover */}
+              <div className="relative overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={400}
+                  height={250}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute top-3 left-3">
+                  <span className="text-xs px-3 py-1.5 bg-blue-500/90 backdrop-blur-sm text-white rounded-full font-medium shadow-lg">
+                    {project.type}
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-xl md:text-2xl font-bold text-blue-400 mb-3 group-hover:text-blue-300 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
+                  {project.description}
+                </p>
+                
+                {/* Tech stack */}
+                <div className="mb-4">
+                  <p className="text-xs text-gray-500 mb-2">Tech Stack:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.split(", ").map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action button */}
+                {project.link !== "#" ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-3 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105"
+                  >
+                    View Project
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                ) : (
+                  <span className="mt-auto inline-flex items-center justify-center gap-2 bg-gray-700/50 text-gray-400 px-4 py-3 rounded-lg font-semibold cursor-not-allowed border border-gray-700">
+                    Private Project
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </span>
+                )}
+              </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -575,13 +864,13 @@ export default function Home() {
               Connect
             </h3>
             <div className="flex gap-6 text-xl">
-              <a
-                href="https://github.com/besho157"
-                target="_blank"
-                className="hover:text-blue-400"
-              >
-                <FaGithub />
-              </a>
+            <a
+              href="https://github.com/BeshoyMeshel"
+              target="_blank"
+              className="hover:text-blue-400"
+            >
+              <FaGithub />
+            </a>
               <a
                 href="https://www.linkedin.com/in/beshoy-meshel-8177bb268/"
                 target="_blank"
