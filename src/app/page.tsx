@@ -89,11 +89,12 @@ export default function Home() {
   const projects = [
     {
       id: 1,
-      title: "Todo Board Application",
+      title: "Kevta",
       description:
-        "A task management and collaboration board. Implemented task creation, editing, and status management with clean UI workflows. Focused on scalable component architecture and user experience.",
-      image: "/Todo-list Photo.png",
-      link: "https://todo.matrixmindsit.com",
+        "Kevta — Full-stack agile task and board app (Matrix Minds). Built and maintained a monorepo with Next.js 15 (React 19, App Router) and Node.js/Express (TypeScript), MongoDB/Mongoose, JWT + Google OAuth, workspaces, Kanban-style boards with custom columns, rich-text task descriptions (TipTap), comments, description history, and workspace member management.",
+      image: "/kevta.png",
+      link: "https://kevta.matrixmindsit.com/",
+      github: "https://github.com/matrixmindsit-eg/todo-list",
       tech: "React, Next.js, TypeScript, Tailwind CSS",
       type: "Personal Project",
     },
@@ -107,16 +108,7 @@ export default function Home() {
       tech: "React, Next.js, TypeScript, Tailwind CSS",
       type: "Client Project (Private)",
     },
-    {
-      id: 3,
-      title: "Rovero (2023)",
-      description:
-        "Developed a mobile application for factory cashback management. Implemented multi-role permissions and user-based edit history. Focused on clean architecture and maintainable UI logic.",
-      image: "/rovero1.png",
-      link: "#",
-      tech: "React Native, TypeScript",
-      type: "Client Project (Private)",
-    },
+
     {
       id: 4,
       title: "Course Master Platform (2023)",
@@ -141,7 +133,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); 
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -157,8 +149,15 @@ export default function Home() {
 
   // Scroll-spy: Update active link based on scroll position using Intersection Observer
   useEffect(() => {
-    const sectionIds = ["home", "about", "experience", "skills", "projects", "contact"];
-    
+    const sectionIds = [
+      "home",
+      "about",
+      "experience",
+      "skills",
+      "projects",
+      "contact",
+    ];
+
     // Wait for DOM to be ready
     const timeoutId = setTimeout(() => {
       const sections = sectionIds
@@ -212,7 +211,10 @@ export default function Home() {
         }
       };
 
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
+      const observer = new IntersectionObserver(
+        observerCallback,
+        observerOptions,
+      );
 
       sections.forEach((section) => {
         observer.observe(section);
@@ -252,12 +254,12 @@ export default function Home() {
     };
   }, []);
 
-  if (!windowSize.width) return null; 
+  if (!windowSize.width) return null;
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -367,9 +369,9 @@ export default function Home() {
             <span className="text-blue-400 font-semibold">
               responsive, scalable, and high-performance
             </span>{" "}
-            web applications using JavaScript, TypeScript, React.js, and Next.js. 
-            Focused on modern UI/UX best practices, component architecture, state management, 
-            and performance optimization.
+            web applications using JavaScript, TypeScript, React.js, and
+            Next.js. Focused on modern UI/UX best practices, component
+            architecture, state management, and performance optimization.
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 mt-4 justify-center md:justify-start">
@@ -379,6 +381,7 @@ export default function Home() {
             >
               View Projects
             </a>
+
             <a
               href="#contact"
               className="px-6 py-3 rounded-full bg-gray-800 hover:bg-gray-700 transition font-semibold"
@@ -463,21 +466,46 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-3xl text-gray-300 text-lg md:text-xl leading-relaxed mb-12"
+          className="max-w-5xl text-gray-300 text-lg md:text-xl leading-relaxed mb-12"
         >
           <p>
-            I am a Frontend Developer with 2 years of experience building{" "}
+            I’m a passionate{" "}
             <span className="text-blue-400 font-semibold">
-              responsive, scalable, and high-performance
-            </span>{" "}
-            web applications using JavaScript, TypeScript, React.js, and Next.js. 
-            I focus on modern UI/UX best practices, component architecture, state management, 
-            and performance optimization. I have experience building{" "}
-            <span className="text-blue-400 font-semibold">
-              enterprise-level dashboards and complex applications
+              Front-End Developer
             </span>
-            , delivering clean and maintainable code. I am currently expanding my backend skills 
-            with Node.js, Express, and API integrations.
+            specializing in building modern, responsive web applications using
+            <span className="text-blue-400 font-semibold">
+              React, Next.js, TypeScript, JavaScript, HTML, and CSS
+            </span>
+            . I focus on creating{" "}
+            <span className="text-blue-400 font-semibold">
+              clean, scalable, and user-friendly interfaces
+            </span>
+            with strong attention to performance and maintainable code.
+          </p>
+
+          <p className="mt-4">
+            I enjoy transforming ideas into real products and building
+            applications that provide
+            <span className="text-blue-400 font-semibold">
+              seamless user experiences
+            </span>
+            . I have experience developing full-featured web applications,
+            including
+            <span className="text-blue-400 font-semibold">
+              dashboards, booking systems, and management platforms
+            </span>
+            , with a strong understanding of modern front-end architecture.
+          </p>
+
+          <p className="mt-4">
+            I’m constantly improving my skills, learning new technologies, and
+            working on real-world projects to grow as a developer and contribute
+            to{" "}
+            <span className="text-blue-400 font-semibold">
+              impactful digital products
+            </span>
+            .
           </p>
         </motion.div>
 
@@ -497,12 +525,20 @@ export default function Home() {
             </div>
             <ul className="list-none text-gray-300 space-y-4">
               <li className="border-l-2 border-blue-500/50 pl-4">
-                <span className="font-semibold text-blue-400 block">Frontend Developer</span>
-                <span className="text-sm text-gray-400">Matrix Minds IT | 2025 - Present</span>
+                <span className="font-semibold text-blue-400 block">
+                  Frontend Developer
+                </span>
+                <span className="text-sm text-gray-400">
+                  Matrix Minds IT | 2025 - Present
+                </span>
               </li>
               <li className="border-l-2 border-blue-500/50 pl-4">
-                <span className="font-semibold text-blue-400 block">Frontend Developer</span>
-                <span className="text-sm text-gray-400">Oriented Coders | Oct 2022 - Oct 2023</span>
+                <span className="font-semibold text-blue-400 block">
+                  Frontend Developer
+                </span>
+                <span className="text-sm text-gray-400">
+                  Oriented Coders | Oct 2024 - Oct 2025
+                </span>
               </li>
             </ul>
           </motion.div>
@@ -522,8 +558,12 @@ export default function Home() {
             </div>
             <ul className="list-none text-gray-300 space-y-3 mb-6">
               <li className="border-l-2 border-blue-500/50 pl-4">
-                <span className="font-semibold text-blue-400 block">Bachelor of Law</span>
-                <span className="text-sm text-gray-400">Assiut University | 2019 - 2023</span>
+                <span className="font-semibold text-blue-400 block">
+                  Bachelor of Law
+                </span>
+                <span className="text-sm text-gray-400">
+                  Assiut University | 2019 - 2023
+                </span>
               </li>
             </ul>
             <div className="flex items-center gap-3 mb-4 mt-6">
@@ -585,11 +625,23 @@ export default function Home() {
               </span>
             </div>
             <ul className="list-disc list-inside text-gray-300 space-y-2 mt-4">
-              <li>Developed and maintained frontend features using React.js and Next.js</li>
-              <li>Built responsive user interfaces optimized for desktop and mobile devices</li>
+              <li>
+                Developed and maintained frontend features using React.js and
+                Next.js
+              </li>
+              <li>
+                Built responsive user interfaces optimized for desktop and
+                mobile devices
+              </li>
               <li>Integrated UI components with backend REST APIs</li>
-              <li>Collaborated with designers and backend developers to deliver production-ready features</li>
-              <li>Worked on form-based and workflow-driven interfaces to improve usability</li>
+              <li>
+                Collaborated with designers and backend developers to deliver
+                production-ready features
+              </li>
+              <li>
+                Worked on form-based and workflow-driven interfaces to improve
+                usability
+              </li>
             </ul>
           </div>
 
@@ -602,17 +654,21 @@ export default function Home() {
                 <p className="text-lg text-gray-300">Oriented Coders</p>
               </div>
               <span className="text-gray-400 text-sm md:text-base mt-2 md:mt-0">
-                Oct 2022 - Oct 2023
+                Oct 2024 - Oct 2025
               </span>
             </div>
             <ul className="list-disc list-inside text-gray-300 space-y-2 mt-4">
-              <li>Developed modern, responsive web applications using React, Next.js, and TypeScript</li>
-              <li>Implemented reusable UI components using Tailwind CSS</li>
-              <li>Translated Figma designs into clean, maintainable frontend code</li>
-              <li>Ensured cross-browser compatibility and consistent UI behavior</li>
-              <li>Developed a responsive admin dashboard with authentication and form-based workflows</li>
-              <li>Integrated frontend features with backend REST APIs</li>
-              <li>Built reusable and scalable UI components with a focus on performance and accessibility</li>
+              <li>
+                Developed modern, responsive web applications using React,
+                Next.js, and TypeScript.
+              </li>
+              <li> Implemented reusable UI components using Tailwind CSS</li>
+              <li>
+                Translated Figma designs into clean, maintainable frontend code
+              </li>
+              <li>
+                Ensured cross-browser compatibility and consistent UI behavior
+              </li>
             </ul>
           </div>
         </div>
@@ -623,77 +679,184 @@ export default function Home() {
         id="skills"
         className="min-h-screen flex flex-col items-center justify-center px-8 text-center z-10"
       >
-        <h2 className="text-4xl font-bold text-blue-400 mb-12">Technical Skills</h2>
+        <h2 className="text-4xl font-bold text-blue-400 mb-12">
+          Technical Skills
+        </h2>
         <div className="max-w-6xl w-full space-y-8">
           <div>
-            <h3 className="text-2xl font-semibold text-blue-300 mb-6">Frontend Technologies</h3>
+            <h3 className="text-2xl font-semibold text-blue-300 mb-6">
+              Frontend Technologies
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {logos.slice(0, 6).map((logo, i) => (
                 <div
                   key={i}
                   className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center"
                 >
-                  <Image src={logo.src} alt={logo.name} width={60} height={60} />
-                  <p className="mt-3 text-gray-300 font-medium text-sm">{logo.name}</p>
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={60}
+                    height={60}
+                  />
+                  <p className="mt-3 text-gray-300 font-medium text-sm">
+                    {logo.name}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-blue-300 mb-6">UI & Styling</h3>
+            <h3 className="text-2xl font-semibold text-blue-300 mb-6">
+              UI & Styling
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {logos.slice(6, 9).map((logo, i) => (
                 <div
                   key={i}
                   className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center"
                 >
-                  <Image src={logo.src} alt={logo.name} width={60} height={60} />
-                  <p className="mt-3 text-gray-300 font-medium text-sm">{logo.name}</p>
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={60}
+                    height={60}
+                  />
+                  <p className="mt-3 text-gray-300 font-medium text-sm">
+                    {logo.name}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-blue-300 mb-6">Backend & APIs</h3>
+            <h3 className="text-2xl font-semibold text-blue-300 mb-6">
+              Backend & APIs
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
-                <Image src={logos[9].src} alt={logos[9].name} width={60} height={60} />
-                <p className="mt-3 text-gray-300 font-medium text-sm">{logos[9].name}</p>
+                <Image
+                  src={logos[9].src}
+                  alt={logos[9].name}
+                  width={60}
+                  height={60}
+                />
+                <p className="mt-3 text-gray-300 font-medium text-sm">
+                  {logos[9].name}
+                </p>
               </div>
               <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-blue-400"/>
-                  <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-blue-400"/>
-                  <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-blue-400"/>
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2L2 7L12 12L22 7L12 2Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                    className="text-blue-400"
+                  />
+                  <path
+                    d="M2 17L12 22L22 17"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                    className="text-blue-400"
+                  />
+                  <path
+                    d="M2 12L12 17L22 12"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                    className="text-blue-400"
+                  />
                 </svg>
-                <p className="mt-3 text-gray-300 font-medium text-sm">RESTful APIs</p>
+                <p className="mt-3 text-gray-300 font-medium text-sm">
+                  RESTful APIs
+                </p>
               </div>
               <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
-                <Image src={logos[11].src} alt={logos[11].name} width={60} height={60} />
-                <p className="mt-3 text-gray-300 font-medium text-sm">{logos[11].name}</p>
+                <Image
+                  src={logos[11].src}
+                  alt={logos[11].name}
+                  width={60}
+                  height={60}
+                />
+                <p className="mt-3 text-gray-300 font-medium text-sm">
+                  {logos[11].name}
+                </p>
               </div>
             </div>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-blue-300 mb-6">Tools & Practices</h3>
+            <h3 className="text-2xl font-semibold text-blue-300 mb-6">
+              Tools & Practices
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
-                <Image src={logos[10].src} alt={logos[10].name} width={60} height={60} />
-                <p className="mt-3 text-gray-300 font-medium text-sm">{logos[10].name}</p>
+                <Image
+                  src={logos[10].src}
+                  alt={logos[10].name}
+                  width={60}
+                  height={60}
+                />
+                <p className="mt-3 text-gray-300 font-medium text-sm">
+                  {logos[10].name}
+                </p>
               </div>
               <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
-                <Image src={logos[12].src} alt={logos[12].name} width={60} height={60} />
-                <p className="mt-3 text-gray-300 font-medium text-sm">{logos[12].name}</p>
+                <Image
+                  src={logos[12].src}
+                  alt={logos[12].name}
+                  width={60}
+                  height={60}
+                />
+                <p className="mt-3 text-gray-300 font-medium text-sm">
+                  {logos[12].name}
+                </p>
               </div>
               <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="text-blue-400"/>
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                    className="text-blue-400"
+                  />
                 </svg>
-                <p className="mt-3 text-gray-300 font-medium text-sm">Performance Optimization</p>
+                <p className="mt-3 text-gray-300 font-medium text-sm">
+                  Performance Optimization
+                </p>
               </div>
               <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition flex flex-col items-center justify-center">
-                <Image src={logos[13].src} alt={logos[13].name} width={60} height={60} />
-                <p className="mt-3 text-gray-300 font-medium text-sm">UI/UX ({logos[13].name})</p>
+                <Image
+                  src={logos[13].src}
+                  alt={logos[13].name}
+                  width={60}
+                  height={60}
+                />
+                <p className="mt-3 text-gray-300 font-medium text-sm">
+                  UI/UX ({logos[13].name})
+                </p>
               </div>
             </div>
           </div>
@@ -752,7 +915,7 @@ export default function Home() {
                 <p className="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
                   {project.description}
                 </p>
-                
+
                 {/* Tech stack */}
                 <div className="mb-4">
                   <p className="text-xs text-gray-500 mb-2">Tech Stack:</p>
@@ -769,26 +932,49 @@ export default function Home() {
                 </div>
 
                 {/* Action button */}
-                {project.link !== "#" ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-3 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105"
-                  >
-                    View Project
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                ) : (
-                  <span className="mt-auto inline-flex items-center justify-center gap-2 bg-gray-700/50 text-gray-400 px-4 py-3 rounded-lg font-semibold cursor-not-allowed border border-gray-700">
-                    Private Project
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                  </span>
-                )}
+                <div className="mt-auto flex gap-3">
+                  {project.link !== "#" && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-3 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105"
+                    >
+                      Live Demo
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14 3h7m0 0v7m0-7L10 14"
+                        />
+                      </svg>
+                    </a>
+                  )}
+
+                  {project.type === "Personal Project" && project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 bg-gray-800 text-white px-4 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 font-semibold border border-gray-700 hover:scale-105"
+                    >
+                      GitHub
+                      <svg
+                        className="w-4 h-4"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.98 3.23 9.2 7.71 10.69.56.1.76-.24.76-.54v-1.88c-3.14.68-3.8-1.51-3.8-1.51-.51-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.65 1.55 2.64 1.1.1-.73.39-1.23.7-1.52-2.51-.29-5.15-1.25-5.15-5.57 0-1.23.44-2.24 1.15-3.03-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.16a10.7 10.7 0 012.8-.38c.95 0 1.9.13 2.8.38 2.14-1.46 3.07-1.16 3.07-1.16.62 1.53.24 2.67.12 2.95.72.79 1.15 1.8 1.15 3.03 0 4.33-2.65 5.28-5.17 5.56.4.34.75 1.02.75 2.06v3.06c0 .3.2.65.77.54A11.26 11.26 0 0023.25 11.75C23.25 5.48 18.27.5 12 .5z" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -961,13 +1147,13 @@ export default function Home() {
               Connect
             </h3>
             <div className="flex gap-6 text-xl">
-            <a
-              href="https://github.com/BeshoyMeshel"
-              target="_blank"
-              className="hover:text-blue-400"
-            >
-              <FaGithub />
-            </a>
+              <a
+                href="https://github.com/BeshoyMeshel"
+                target="_blank"
+                className="hover:text-blue-400"
+              >
+                <FaGithub />
+              </a>
               <a
                 href="https://www.linkedin.com/in/beshoy-meshel-8177bb268/"
                 target="_blank"
