@@ -86,7 +86,7 @@ export function HeroSection() {
           <div className="absolute inset-0 p-2 rounded-full bg-gradient-to-tr from-blue-500/50 to-purple-500/50 backdrop-blur-3xl border border-white/10 shadow-2xl">
             <div className="relative w-full h-full rounded-full overflow-hidden bg-[#111]">
               <Image
-                src="/My Photo.png"
+                src="/photo.png"
                 alt="Beshoy Meshel"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-110 grayscale hover:grayscale-0"
