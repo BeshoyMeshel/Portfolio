@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
 import Image from "next/image";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaBookOpen } from "react-icons/fa";
+import Link from "next/link";
 
 export function ProjectsSection() {
   return (
@@ -71,7 +72,15 @@ export function ProjectsSection() {
                   ))}
                 </ul>
 
-                <div className="flex items-center gap-4 pt-4">
+                <div className="flex flex-wrap items-center gap-6 pt-4">
+                  {project.hasPage && (
+                    <Link
+                      href="/projects/matrix-minds"
+                      className="flex items-center gap-2 text-white hover:text-pink-400 transition-colors font-medium"
+                    >
+                      <FaBookOpen className="text-base" /> Case Study
+                    </Link>
+                  )}
                   {project.github && (
                     <a
                       href={project.github}

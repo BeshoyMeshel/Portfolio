@@ -1,6 +1,6 @@
 "use client";
 
-import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { links } from "@/lib/data";
 
 export function Footer() {
@@ -42,8 +42,8 @@ export function Footer() {
             <a href="https://www.linkedin.com/in/beshoy-meshel-8177bb268/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#0077b5] hover:bg-[#0077b5]/10 hover:border-[#0077b5]/30 transition-all">
               <FaLinkedin className="text-lg" />
             </a>
-            <a href="https://www.facebook.com/besho.meshei" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#1877f2] hover:bg-[#1877f2]/10 hover:border-[#1877f2]/30 transition-all">
-              <FaFacebook className="text-lg" />
+            <a href="mailto:beshomeshel15@gmail.com" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-green-400 hover:bg-green-500/10 hover:border-green-500/30 transition-all">
+              <FaEnvelope className="text-lg" />
             </a>
           </div>
         </div>

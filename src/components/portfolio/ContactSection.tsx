@@ -50,13 +50,13 @@ export function ContactSection() {
             </div>
 
             <div className="space-y-6">
-              <a href="mailto:beshoymeshel15@gmail.com" className="flex items-center gap-4 group">
+              <a href="mailto:beshomeshel15@gmail.com" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-green-400 group-hover:bg-green-500/10 transition-colors">
                   <FiMail className="text-xl" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Email</p>
-                  <p className="text-white font-medium group-hover:text-green-400 transition-colors">beshoymeshel15@gmail.com</p>
+                  <p className="text-white font-medium group-hover:text-green-400 transition-colors">beshomeshel15@gmail.com</p>
                 </div>
               </a>
 

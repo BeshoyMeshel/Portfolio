@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { logos } from "@/lib/data";
+import { logos, skillCategories } from "@/lib/data";
 import Image from "next/image";
 
 export function SkillsSection() {
@@ -68,6 +68,45 @@ export function SkillsSection() {
               </p>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Categorized Skills Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-20 space-y-8"
+        >
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-white mb-2">Specialized Expertise</h3>
+            <p className="text-gray-400 text-sm max-w-xl mx-auto">
+              Deep-dive skill categories and core engineering practices from my professional background.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skillCategories.map((category, idx) => (
+              <div
+                key={idx}
+                className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:border-cyan-500/20 transition-all"
+              >
+                <h4 className="text-cyan-400 font-semibold mb-4 text-base tracking-wide border-b border-white/5 pb-2">
+                  {category.title}
+                </h4>
+                <ul className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, sIdx) => (
+                    <li
+                      key={sIdx}
+                      className="px-3 py-1.5 bg-white/5 rounded-lg text-gray-300 text-xs border border-white/5 hover:bg-white/10 transition-colors"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
       </div>

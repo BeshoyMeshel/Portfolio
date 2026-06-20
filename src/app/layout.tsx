@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Beshoy Meshel - Frontend Developer",
-  description: "Frontend Developer with 2 years of experience building responsive, scalable, and high-performance web applications using JavaScript, TypeScript, React.js, and Next.js.",
+  title: "Beshoy Meshel Saad - Front-End Developer",
+  description: "Front-End Developer with 2 years of experience building responsive, scalable web apps in React.js, Next.js, and TypeScript. Shipped production dashboards and project-management platforms.",
 };
 
 export default function RootLayout({

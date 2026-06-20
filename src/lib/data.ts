@@ -18,79 +18,112 @@ export const logos = [
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", name: "HTML5" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", name: "CSS3" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", name: "Tailwind CSS" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg", name: "Material UI" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg", name: "Bootstrap" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", name: "Node.js" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", name: "Git" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", name: "Express" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", name: "GitHub" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", name: "Figma" },
+];
+
+export const skillCategories = [
+  {
+    title: "Frontend Development",
+    skills: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3"]
+  },
+  {
+    title: "UI & Styling",
+    skills: ["Tailwind CSS", "Responsive Design", "Mobile-First Design", "Accessibility (WCAG)", "Figma to Code"]
+  },
+  {
+    title: "Tools & Workflow",
+    skills: ["Git", "GitHub", "REST APIs", "Vercel", "AI Dev Tools (Cursor, Claude, ChatGPT)"]
+  },
+  {
+    title: "State Management",
+    skills: ["Context API", "React Hooks"]
+  },
+  {
+    title: "Core Concepts",
+    skills: ["Component-Based Architecture", "Reusable Components", "API Integration", "Clean Code", "Performance Optimization"]
+  }
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "Kevta",
-    description: "Kevta — Full-stack agile task and board app. Built and maintained a monorepo with Next.js 15 (React 19, App Router) and Node.js/Express (TypeScript), MongoDB/Mongoose, JWT + Google OAuth, workspaces, Kanban-style boards with custom columns, rich-text task descriptions (TipTap), comments, and workspace management.",
-    image: "/kevta.png",
-    link: "https://kevta.matrixmindsit.com/",
-    github: "https://github.com/matrixmindsit-eg/todo-list",
-    tech: "React, Next.js, TypeScript, Tailwind CSS, Node.js, MongoDB",
-    type: "Personal Project",
+    title: "Matrix Minds IT — Company Website",
+    description: "Official corporate website developed to showcase IT services, featuring a mobile-first responsive design and an SEO-optimized structure. Focused on high performance and clean UI components for an optimal user experience.",
+    image: "/Screenshot (1620).png",
+    link: "https://matrixmindsit.com",
+    hasPage: true,
+    tech: "React.js, Next.js, TypeScript, Tailwind CSS",
+    type: "Company Website",
   },
   {
     id: 2,
-    title: "Safety Zone (2025)",
-    description: "Developed modern, responsive web applications using React, Next.js, and TypeScript. Implemented reusable UI components using Tailwind CSS. Translated Figma designs into clean, maintainable frontend code. Ensured cross-browser compatibility and consistent UI behavior.",
-    image: "/safty zone.png",
-    link: "#",
-    tech: "React, Next.js, TypeScript, Tailwind CSS",
-    type: "Client Project",
+    title: "Kevta — Task & Board Management Platform",
+    description: "A collaborative Kanban-style project management platform featuring workspace organization, board management, and structured task workflows. Built to streamline team tracking with drag-and-drop mechanics and custom task boards.",
+    image: "/kevta.png",
+    link: "https://kevta.matrixmindsit.com",
+    github: "", // Left blank as per CV info
+    tech: "React.js, Next.js, TypeScript, Tailwind CSS",
+    type: "Collaborative Platform",
   },
   {
     id: 3,
-    title: "Course Master Platform (2023)",
-    description: "Built an e-learning platform for teachers and students. Implemented course uploads, attendance tracking, and multi-tenant features. Worked on scalable UI flows and dashboard components.",
+    title: "Course Master — E-Learning Platform",
+    description: "A role-based e-learning dashboard for instructors and students. Facilitates structured learning paths, content organization, enrollment handling, and dynamic data rendering via REST API integrations.",
     image: "/cm.png",
     link: "#",
-    tech: "React, Next.js, TypeScript, Tailwind CSS",
-    type: "Client Project",
+    tech: "Next.js, TypeScript, Tailwind CSS",
+    type: "E-Learning Platform",
   },
   {
     id: 4,
-    title: "Oriented Coders Dashboard (2022-2023)",
-    description: "Developed the official marketing website. Built an internal dashboard to manage jobs, news, reviews, and applications. Ensured responsive layouts and cross-browser compatibility.",
-    image: "/oc-dashboard1.png",
+    title: "Safety Zone — Fire Protection Dashboard",
+    description: "An internal management system and operational dashboard designed for a fire protection firm to coordinate services and operations. Implements responsive admin interfaces for secure, seamless data handling.",
+    image: "/safty zone.png",
     link: "#",
-    tech: "React, Next.js, TypeScript, Tailwind CSS",
-    type: "Client Project",
+    tech: "React.js, Next.js, Tailwind CSS",
+    type: "Internal Dashboard",
   },
 ];
 
 export const experience = [
   {
     id: 1,
-    role: "Frontend Developer",
+    role: "Front-End Developer",
     company: "Matrix Minds IT",
-    date: "2025 - Present",
+    date: "Oct 2025 – Present",
     points: [
-      "Developed and maintained frontend features using React.js and Next.js.",
-      "Built responsive user interfaces optimized for desktop and mobile devices.",
-      "Integrated UI components with backend REST APIs securely.",
-      "Collaborated with designers and backend developers to deliver production-ready features.",
-      "Worked on form-based and workflow-driven interfaces to improve usability."
+      "Build and maintain web applications using React.js, Next.js, and TypeScript.",
+      "Develop responsive interfaces for desktop and mobile devices.",
+      "Integrate REST APIs and dynamic frontend workflows.",
+      "Collaborate with designers and backend developers in a cross-functional team environment.",
+      "Improve maintainability through reusable components and structured architecture."
     ]
   },
   {
     id: 2,
-    role: "Frontend Developer",
+    role: "Front-End Developer",
     company: "Oriented Coders",
-    date: "Oct 2023 - Oct 2025",
+    date: "Oct 2023 – Oct 2025",
     points: [
-      "Developed modern, responsive web applications using React, Next.js, and TypeScript.",
-      "Implemented reusable UI components using Tailwind CSS.",
-      "Translated Figma designs into clean, maintainable frontend code.",
-      "Ensured cross-browser compatibility and consistent UI behavior."
+      "Developed modern web applications using React.js and Next.js.",
+      "Converted Figma designs into responsive and production-ready interfaces.",
+      "Improved component structure and overall code quality.",
+      "Worked within a team environment following professional development workflows.",
+      "Tested applications across browsers and screen sizes to ensure compatibility."
+    ]
+  },
+  {
+    id: 3,
+    role: "Freelance Front-End Developer",
+    company: "Remote / Project-Based",
+    date: "Dec 2022 – Oct 2023",
+    points: [
+      "Delivered responsive web applications for clients in remote collaboration environments.",
+      "Communicated directly with clients to gather requirements and deliver production-ready solutions.",
+      "Integrated REST APIs and optimized frontend performance.",
+      "Leveraged AI tools to enhance development workflow and productivity."
     ]
   }
 ];

@@ -32,7 +32,7 @@ export function HeroSection() {
               Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Modern</span> Web Apps
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-              Hi, I&apos;m <span className="text-white font-semibold">Beshoy Meshel</span>. Experienced in building scalable web applications using React.js, Next.js, and TypeScript. Skilled in Figma-to-code, REST APIs, and responsive design.
+              Hi, I&apos;m <span className="text-white font-semibold">Beshoy Meshel Saad</span>. I am a Front-End Developer with 2 years of experience building responsive, scalable web applications using React.js, Next.js, and TypeScript. I specialize in translating design concepts into clean, accessible user interfaces.
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export function HeroSection() {
             <a href="https://www.linkedin.com/in/beshoy-meshel-8177bb268/" target="_blank" rel="noreferrer" className="hover:text-[#0077b5] hover:-translate-y-1 transition-all">
               <FaLinkedin />
             </a>
-            <a href="mailto:beshoymeshel15@gmail.com" className="hover:text-[#ea4335] hover:-translate-y-1 transition-all">
+            <a href="mailto:beshomeshel15@gmail.com" className="hover:text-[#ea4335] hover:-translate-y-1 transition-all">
               <SiGmail />
             </a>
           </motion.div>

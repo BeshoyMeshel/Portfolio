@@ -57,17 +57,13 @@ export function AboutSection() {
             </p>
 
             <p>
-              Beyond coding, I have a background in Law (Assiut University),
-              which instilled in me a strong sense of analytical thinking,
-              attention to detail, and problem-solving—skills that translate
-              perfectly into writing maintainable logic and structuring large
-              codebases.
+              Beyond coding, my background in Law from Assiut University has structured my analytical approach, attention to detail, and problem-solving framework. These attributes directly translate into writing maintainable, structured logic and designing robust components.
             </p>
 
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/Beshoy_Meshel_CV.pdf"
+              href="/Beshoy-Meshel - Front-End developer.pdf"
               download
               className="inline-flex items-center gap-3 mt-4 bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-xl text-white font-medium backdrop-blur-md transition-colors"
             >
@@ -82,49 +78,52 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
-            <div className="col-span-2 md:col-span-1 bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
-              <h3 className="text-blue-400 font-bold mb-2 text-xl">
-                2+ Years
-              </h3>
-
-              <p className="text-gray-400 text-sm">
-                Professional Experience in Frontend Development
+            {/* Experience */}
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
+              <span className="text-xs text-blue-400 font-semibold tracking-wider uppercase block mb-1">Experience</span>
+              <h3 className="text-white font-bold text-xl mb-2">2+ Years</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Building responsive web apps, dashboards, and SaaS platforms.
               </p>
             </div>
 
-            <div className="col-span-2 md:col-span-1 bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
-              <h3 className="text-purple-400 font-bold mb-2 text-xl">
-                10+ Projects
-              </h3>
-
-              <p className="text-gray-400 text-sm">
-                Delivered robust applications and client sites
+            {/* Core Competencies */}
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
+              <span className="text-xs text-purple-400 font-semibold tracking-wider uppercase block mb-1">Deliverables</span>
+              <h3 className="text-white font-bold text-xl mb-2">Shipped Apps</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Delivered secure user-facing systems and high-performance corporate sites.
               </p>
             </div>
 
-            <div className="col-span-2 bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-blue-500/20 p-6 rounded-2xl backdrop-blur-sm">
-              <h3 className="text-white font-bold mb-4 text-lg">
-                Core Competencies
-              </h3>
+            {/* Education */}
+            <div className="col-span-1 md:col-span-2 bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
+              <span className="text-xs text-cyan-400 font-semibold tracking-wider uppercase block mb-1">Education & Transition</span>
+              <h4 className="text-white font-bold text-lg mb-1">Bachelor of Law</h4>
+              <p className="text-gray-400 text-sm mb-3">Assiut University (2019 – 2023)</p>
+              <p className="text-gray-400 text-sm leading-relaxed border-t border-white/10 pt-3">
+                Transitioned to Front-End Development through intensive project-based learning and hands-on experience with React.js, Next.js, and TypeScript.
+              </p>
+            </div>
 
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Component Architecture",
-                  "State Management",
-                  "Responsive UI",
-                  "REST APIs",
-                  "Performance Optimization",
-                ].map((skill, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-black/50 border border-white/5 rounded-full text-xs text-gray-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+            {/* Languages */}
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
+              <span className="text-xs text-green-400 font-semibold tracking-wider uppercase block mb-1">Languages</span>
+              <ul className="text-gray-300 text-sm space-y-1.5 mt-2">
+                <li><span className="text-white font-medium">Arabic:</span> Native</li>
+                <li><span className="text-white font-medium">English:</span> Professional Proficiency</li>
+              </ul>
+            </div>
+
+            {/* Additional Info */}
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
+              <span className="text-xs text-yellow-400 font-semibold tracking-wider uppercase block mb-1">Status</span>
+              <ul className="text-gray-300 text-sm space-y-1.5 mt-2">
+                <li><span className="text-white font-medium">Military Service:</span> Completed</li>
+                <li><span className="text-white font-medium">Location:</span> Cairo, Egypt</li>
+              </ul>
             </div>
           </motion.div>
         </div>
