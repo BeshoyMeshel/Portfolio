@@ -1,25 +1,86 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { FiMail, FiMapPin, FiPhone, FiArrowUpRight } from "react-icons/fi";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export function ContactSection() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [focused, setFocused] = useState<string | null>(null);
+  const contactDetails = [
+    {
+      icon: <FiMail className="text-2xl" />,
+      label: "Email",
+      value: "beshomeshel15@gmail.com",
+      href: "mailto:beshomeshel15@gmail.com",
+      color: "text-green-400",
+      glowClass: "hover:shadow-[0_0_30px_rgba(74,222,128,0.15)] hover:border-green-400/30",
+      actionText: "Email me",
+      desc: "Available for contract & permanent roles"
+    },
+    {
+      icon: <FiPhone className="text-2xl" />,
+      label: "Phone",
+      value: "+20 127 580 9921",
+      href: "tel:+201275809921",
+      color: "text-blue-400",
+      glowClass: "hover:shadow-[0_0_30px_rgba(96,165,250,0.15)] hover:border-blue-400/30",
+      actionText: "Call directly",
+      desc: "Mon - Fri, 9 AM - 6 PM (GMT+2)"
+    },
+    {
+      icon: <FiMapPin className="text-2xl" />,
+      label: "Location",
+      value: "Cairo, Egypt",
+      href: null,
+      color: "text-purple-400",
+      glowClass: "hover:shadow-[0_0_30px_rgba(192,132,252,0.15)] hover:border-purple-400/30",
+      actionText: "Cairo & Remote",
+      desc: "Available for local & global projects"
+    }
+  ];
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const socialLinks = [
+    {
+      icon: <FaLinkedin className="text-xl" />,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/beshoy-meshel-8177bb268/",
+      color: "hover:text-[#0077b5] hover:bg-[#0077b5]/10 hover:border-[#0077b5]/30",
+      handle: "/in/beshoy-meshel"
+    },
+    {
+      icon: <FaGithub className="text-xl" />,
+      label: "GitHub",
+      href: "https://github.com/BeshoyMeshel",
+      color: "hover:text-white hover:bg-white/10 hover:border-white/20",
+      handle: "@BeshoyMeshel"
+    }
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    alert("Message sent successfully!");
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 260,
+        damping: 20
+      }
+    }
   };
 
   return (
     <section id="contact" className="relative min-h-screen flex items-center justify-center py-24 z-10">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 w-full flex flex-col justify-center">
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -31,125 +92,101 @@ export function ContactSection() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
             Get in <span className="text-green-400">Touch</span>
           </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-6">
+            Looking for a Front-End Developer to join your team or build a high-performance web experience? Let&apos;s connect and discuss how I can help.
+          </p>
           <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto"></div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-12 items-start">
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-2 space-y-8"
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-2">Let&apos;s build something great.</h3>
-              <p className="text-gray-400">I am currently open for new opportunities. Reach out and I will get back to you within 24 hours.</p>
-            </div>
-
-            <div className="space-y-6">
-              <a href="mailto:beshomeshel15@gmail.com" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-green-400 group-hover:bg-green-500/10 transition-colors">
-                  <FiMail className="text-xl" />
-                </div>
+        {/* Contact Cards Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+        >
+          {contactDetails.map((item, idx) => {
+            const CardContent = (
+              <div className="h-full flex flex-col justify-between">
                 <div>
-                  <p className="text-sm text-gray-500">Email</p>
-                  <p className="text-white font-medium group-hover:text-green-400 transition-colors">beshomeshel15@gmail.com</p>
+                  <div className={`w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-gray-300 group-hover:${item.color} group-hover:bg-white/10 transition-all duration-300`}>
+                    {item.icon}
+                  </div>
+                  <h3 className="text-sm font-semibold tracking-wider text-gray-500 uppercase mb-2">
+                    {item.label}
+                  </h3>
+                  <p className="text-xl font-bold text-white mb-3 break-all tracking-tight leading-snug group-hover:text-white transition-colors">
+                    {item.value}
+                  </p>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
-              </a>
-
-              <a href="tel:+201275809921" className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500/10 transition-colors">
-                  <FiPhone className="text-xl" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Phone</p>
-                  <p className="text-white font-medium group-hover:text-blue-400 transition-colors">+20 127 580 9921</p>
-                </div>
-              </a>
-
-              <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500/10 transition-colors">
-                  <FiMapPin className="text-xl" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Location</p>
-                  <p className="text-white font-medium group-hover:text-purple-400 transition-colors">Cairo, Egypt</p>
-                </div>
+                {item.href && (
+                  <div className="mt-8 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500 group-hover:text-white transition-colors duration-300">
+                    <span>{item.actionText}</span>
+                    <FiArrowUpRight className="text-sm transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                  </div>
+                )}
               </div>
-            </div>
-          </motion.div>
+            );
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="lg:col-span-3 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md"
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="relative">
-                  <label className={`absolute left-4 transition-all duration-200 pointer-events-none ${focused === "name" || form.name ? "text-xs -top-2.5 bg-[#111] px-1 text-green-400" : "top-3.5 text-gray-500"}`}>
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    onFocus={() => setFocused("name")}
-                    onBlur={() => setFocused(null)}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-green-400/50 transition-colors"
-                    required
-                  />
-                </div>
-
-                <div className="relative">
-                  <label className={`absolute left-4 transition-all duration-200 pointer-events-none ${focused === "email" || form.email ? "text-xs -top-2.5 bg-[#111] px-1 text-green-400" : "top-3.5 text-gray-500"}`}>
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    onFocus={() => setFocused("email")}
-                    onBlur={() => setFocused(null)}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-green-400/50 transition-colors"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="relative">
-                <label className={`absolute left-4 transition-all duration-200 pointer-events-none ${focused === "message" || form.message ? "text-xs -top-2.5 bg-[#111] px-1 text-green-400" : "top-4 text-gray-500"}`}>
-                  Your Message
-                </label>
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  onFocus={() => setFocused("message")}
-                  onBlur={() => setFocused(null)}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white h-40 resize-none focus:outline-none focus:border-green-400/50 transition-colors"
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold tracking-wide hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-shadow duration-300"
+            return (
+              <motion.div
+                key={idx}
+                variants={cardVariants}
+                whileHover={{ y: -8, scale: 1.01 }}
+                className={`group relative overflow-hidden bg-white/[0.02] border border-white/[0.08] p-8 rounded-3xl backdrop-blur-md transition-all duration-300 ${item.glowClass} flex flex-col justify-between h-full`}
               >
-                Send Message
-              </button>
-            </form>
-          </motion.div>
+                {item.href ? (
+                  <a href={item.href} className="block h-full w-full">
+                    {CardContent}
+                  </a>
+                ) : (
+                  <div className="h-full w-full">
+                    {CardContent}
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
+        </motion.div>
 
-        </div>
+        {/* Social Connect panel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="bg-white/[0.01] border border-white/[0.05] rounded-3xl p-8 backdrop-blur-md max-w-2xl mx-auto text-center w-full"
+        >
+          <h4 className="text-lg font-semibold text-white mb-2">Connect on Professional Platforms</h4>
+          <p className="text-sm text-gray-400 mb-8 max-w-md mx-auto">
+            Explore my code repositories, contributions, and professional background.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            {socialLinks.map((link, idx) => (
+              <a
+                key={idx}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className={`flex items-center justify-between gap-6 px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] text-gray-300 transition-all duration-300 font-medium ${link.color} group`}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="text-xl">{link.icon}</div>
+                  <div className="text-left">
+                    <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">{link.label}</p>
+                    <p className="text-sm text-white group-hover:opacity-90">{link.handle}</p>
+                  </div>
+                </div>
+                <FiArrowUpRight className="text-base text-gray-500 group-hover:text-white transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
