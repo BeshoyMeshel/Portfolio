@@ -61,8 +61,8 @@ export const projects = [
     id: 2,
     title: "Kevta — Task & Board Management Platform",
     description: "A collaborative Kanban-style project management platform featuring workspace organization, board management, and structured task workflows. Built to streamline team tracking with drag-and-drop mechanics and custom task boards.",
-    image: "/kevta.png",
-    link: "https://kevta.matrixmindsit.com",
+    image: "/kevta-img.png",
+    link: "https://kevta.app/",
     github: "", // Left blank as per CV info
     tech: "React.js, Next.js, TypeScript, Tailwind CSS",
     type: "Collaborative Platform",

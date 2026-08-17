@@ -63,7 +63,7 @@ export function AboutSection() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/Beshoy-Meshel - Front-End developer.pdf"
+              href="/Beshoy-Meshel_Front-End-Developer_CV.pdf"
               download
               className="inline-flex items-center gap-3 mt-4 bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-xl text-white font-medium backdrop-blur-md transition-colors"
             >
