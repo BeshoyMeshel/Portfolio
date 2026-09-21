@@ -13,7 +13,7 @@ export function Footer() {
             Beshoy <span className="text-blue-500">Meshel</span>
           </h3>
           <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-            Frontend Developer passionate about crafting modern, scalable, and beautifully animated web experiences.
+            Front-End Developer
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export function Footer() {
           © {new Date().getFullYear()} Beshoy Meshel. All rights reserved.
         </p>
         <p className="text-xs text-gray-500">
-          Built with React & Next.js
+          Cairo, Egypt
         </p>
       </div>
     </footer>

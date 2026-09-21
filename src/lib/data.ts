@@ -25,16 +25,20 @@ export const logos = [
 
 export const skillCategories = [
   {
-    title: "Frontend Development",
+    title: "Frontend",
     skills: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3"]
   },
   {
+    title: "Backend (Working Knowledge)",
+    skills: ["Node.js", "Express.js", "REST API Design"]
+  },
+  {
     title: "UI & Styling",
-    skills: ["Tailwind CSS", "Responsive Design", "Mobile-First Design", "Accessibility (WCAG)", "Figma to Code"]
+    skills: ["Tailwind CSS", "Responsive Design", "Mobile-First", "Accessibility (WCAG)", "Figma to Code"]
   },
   {
     title: "Tools & Workflow",
-    skills: ["Git", "GitHub", "REST APIs", "Vercel", "AI Dev Tools (Cursor, Claude, ChatGPT)"]
+    skills: ["Git", "GitHub", "REST APIs", "Vercel", "Cursor", "ChatGPT", "Claude"]
   },
   {
     title: "State Management",
@@ -49,39 +53,48 @@ export const skillCategories = [
 export const projects = [
   {
     id: 1,
+    title: "Kevta — Task & Board Management Platform",
+    description: "GitHub-like project management platform with workspaces, boards, and item-based task organization. Created Kanban-style boards with draggable items, status columns, and structured task workflows.",
+    image: "/kevta-img.png",
+    link: "https://kevta.app/",
+    github: "https://github.com/matrixmindsit-eg/todo-list",
+    tech: "React.js, Next.js, TypeScript, Tailwind CSS",
+    type: "Collaborative Platform",
+  },
+  {
+    id: 2,
+    title: "Folier — No-Code Portfolio Builder",
+    description: "No-code SaaS platform enabling users to build and publish personal portfolio websites without writing code. Implemented customizable templates, live preview, and a streamlined publishing workflow.",
+    image: "/folier.png",
+    link: "https://folier.app",
+    github: "https://github.com/matrixmindsit-eg/portfolio",
+    tech: "React.js, Next.js, TypeScript, Tailwind CSS",
+    type: "No-Code SaaS Platform",
+  },
+  {
+    id: 3,
     title: "Matrix Minds IT — Company Website",
-    description: "Official corporate website developed to showcase IT services, featuring a mobile-first responsive design and an SEO-optimized structure. Focused on high performance and clean UI components for an optimal user experience.",
+    description: "Official corporate website showcasing IT services with mobile-first responsive design and SEO-optimized structure.",
     image: "/Screenshot (1620).png",
     link: "https://matrixmindsit.com",
+    github: "https://github.com/matrixmindsit-eg/mm-system",
     hasPage: true,
     tech: "React.js, Next.js, TypeScript, Tailwind CSS",
     type: "Company Website",
   },
   {
-    id: 2,
-    title: "Kevta — Task & Board Management Platform",
-    description: "A collaborative Kanban-style project management platform featuring workspace organization, board management, and structured task workflows. Built to streamline team tracking with drag-and-drop mechanics and custom task boards.",
-    image: "/kevta-img.png",
-    link: "https://kevta.app/",
-    github: "", // Left blank as per CV info
-    tech: "React.js, Next.js, TypeScript, Tailwind CSS",
-    type: "Collaborative Platform",
-  },
-  {
-    id: 3,
+    id: 4,
     title: "Course Master — E-Learning Platform",
-    description: "A role-based e-learning dashboard for instructors and students. Facilitates structured learning paths, content organization, enrollment handling, and dynamic data rendering via REST API integrations.",
+    description: "Role-based e-learning platform with separate dashboards for instructors and students. Implemented course management, enrollment handling, and structured learning workflows.",
     image: "/cm.png",
-    link: "#",
     tech: "Next.js, TypeScript, Tailwind CSS",
     type: "E-Learning Platform",
   },
   {
-    id: 4,
-    title: "Safety Zone — Fire Protection Dashboard",
-    description: "An internal management system and operational dashboard designed for a fire protection firm to coordinate services and operations. Implements responsive admin interfaces for secure, seamless data handling.",
+    id: 5,
+    title: "Safety Zone — Fire Protection System & Dashboard",
+    description: "Internal system and dashboard for a fire protection company to manage services and operations.",
     image: "/safty zone.png",
-    link: "#",
     tech: "React.js, Next.js, Tailwind CSS",
     type: "Internal Dashboard",
   },
@@ -96,34 +109,20 @@ export const experience = [
     points: [
       "Build and maintain web applications using React.js, Next.js, and TypeScript.",
       "Develop responsive interfaces for desktop and mobile devices.",
-      "Integrate REST APIs and dynamic frontend workflows.",
-      "Collaborate with designers and backend developers in a cross-functional team environment.",
-      "Improve maintainability through reusable components and structured architecture."
+      "Integrate REST APIs and implement dynamic frontend workflows.",
+      "Collaborate with designers and backend developers in a cross-functional team environment."
     ]
   },
   {
     id: 2,
     role: "Front-End Developer",
     company: "Oriented Coders",
-    date: "Oct 2023 – Oct 2025",
+    date: "Oct 2024 – Oct 2025",
     points: [
       "Developed modern web applications using React.js and Next.js.",
       "Converted Figma designs into responsive and production-ready interfaces.",
       "Improved component structure and overall code quality.",
-      "Worked within a team environment following professional development workflows.",
       "Tested applications across browsers and screen sizes to ensure compatibility."
-    ]
-  },
-  {
-    id: 3,
-    role: "Freelance Front-End Developer",
-    company: "Remote / Project-Based",
-    date: "Dec 2022 – Oct 2023",
-    points: [
-      "Delivered responsive web applications for clients in remote collaboration environments.",
-      "Communicated directly with clients to gather requirements and deliver production-ready solutions.",
-      "Integrated REST APIs and optimized frontend performance.",
-      "Leveraged AI tools to enhance development workflow and productivity."
     ]
   }
 ];

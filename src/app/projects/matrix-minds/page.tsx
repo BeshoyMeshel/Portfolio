@@ -11,11 +11,9 @@ export default function MatrixMindsProjectPage() {
       {/* Background decoration */}
       <BackgroundEffects />
 
-      {/* Decorative Glows */}
+      {/* Top Navigation */}
       <div className="absolute top-0 right-0 w-[45vw] h-[45vw] rounded-full bg-blue-600/10 blur-[150px] pointer-events-none" />
       <div className="absolute bottom-20 left-0 w-[35vw] h-[35vw] rounded-full bg-purple-600/5 blur-[120px] pointer-events-none" />
-
-      {/* Top Navigation */}
       <header className="fixed top-0 w-full h-20 z-50 bg-[#050505]/60 backdrop-blur-xl border-b border-white/5 flex items-center">
         <div className="max-w-6xl mx-auto px-6 md:px-12 w-full flex items-center justify-between">
           <Link
@@ -40,9 +38,7 @@ export default function MatrixMindsProjectPage() {
           transition={{ duration: 0.6 }}
           className="space-y-4"
         >
-          <span className="text-xs text-blue-400 font-semibold tracking-wider uppercase">
-            Corporate Project
-          </span>
+          <span className="text-xs text-blue-400 font-semibold tracking-wider uppercase">Project</span>
           <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
             Matrix Minds IT <br className="hidden md:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
@@ -50,7 +46,7 @@ export default function MatrixMindsProjectPage() {
             </span>
           </h1>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl pt-2">
-            The official corporate website for Matrix Minds IT, showcasing cutting-edge IT services and consulting capabilities with an emphasis on high performance, clean aesthetics, and mobile-first responsiveness.
+            Official corporate website showcasing IT services with mobile-first responsive design and SEO-optimized structure.
           </p>
         </motion.div>
 
@@ -69,7 +65,7 @@ export default function MatrixMindsProjectPage() {
           >
             <FaExternalLinkAlt className="text-sm" /> Visit Live Website
           </a>
-          <span className="text-xs text-gray-500 font-mono">matrixmindsit.com</span>
+            <span className="text-xs text-gray-500 font-mono">matrixmindsit.com</span>
         </motion.div>
 
         {/* Grid Info */}
@@ -80,20 +76,20 @@ export default function MatrixMindsProjectPage() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-white/10"
         >
           <div>
-            <span className="text-xs text-gray-500 uppercase block mb-1">Role</span>
-            <span className="text-white font-medium">Front-End Developer</span>
+            <span className="text-xs text-gray-500 uppercase block mb-1">Project</span>
+            <span className="text-white font-medium">Matrix Minds IT — Company Website</span>
           </div>
           <div>
-            <span className="text-xs text-gray-500 uppercase block mb-1">Platform</span>
-            <span className="text-white font-medium">Web / Corporate</span>
+            <span className="text-xs text-gray-500 uppercase block mb-1">Stack</span>
+            <span className="text-white font-medium">React.js, Next.js, TypeScript, Tailwind CSS</span>
           </div>
           <div>
-            <span className="text-xs text-gray-500 uppercase block mb-1">Company</span>
-            <span className="text-white font-medium">Matrix Minds IT</span>
+            <span className="text-xs text-gray-500 uppercase block mb-1">Live</span>
+            <span className="text-white font-medium">matrixmindsit.com</span>
           </div>
           <div>
-            <span className="text-xs text-gray-500 uppercase block mb-1">Timeline</span>
-            <span className="text-white font-medium">October 2025</span>
+            <span className="text-xs text-gray-500 uppercase block mb-1">GitHub</span>
+            <span className="text-white font-medium">github.com/matrixmindsit-eg/mm-system</span>
           </div>
         </motion.div>
 
@@ -107,12 +103,9 @@ export default function MatrixMindsProjectPage() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-bold text-white">Project Overview & Challenge</h2>
+            <h2 className="text-2xl font-bold text-white">Project Description</h2>
             <p className="text-gray-400 leading-relaxed text-base md:text-lg">
-              As Matrix Minds IT expanded its digital reach, the company required a brand-new corporate website that would accurately reflect its high engineering standards, services portfolio, and client consulting solutions.
-            </p>
-            <p className="text-gray-400 leading-relaxed text-base md:text-lg">
-              The primary challenge lay in creating a visually premium, high-performance portal that could engage corporate clients while maintaining rapid load times and ensuring absolute accessibility across all desktop and mobile environments.
+              Official corporate website showcasing IT services with mobile-first responsive design and SEO-optimized structure.
             </p>
           </motion.section>
 
@@ -124,24 +117,12 @@ export default function MatrixMindsProjectPage() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-bold text-white">Key Contributions & Solution</h2>
+            <h2 className="text-2xl font-bold text-white">Technologies</h2>
             <ul className="space-y-4">
               <li className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <h3 className="text-blue-400 font-semibold mb-2">Modern Architecture</h3>
+                <h3 className="text-blue-400 font-semibold mb-2">Built using</h3>
                 <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                  Leveraged the power of React, Next.js, and TypeScript to structure a component-driven architecture. This enabled highly reusable UI modules, ensuring rapid development and consistent styling.
-                </p>
-              </li>
-              <li className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <h3 className="text-purple-400 font-semibold mb-2">Performance Optimization</h3>
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                  Configured image optimization strategies, code-splitting modules, and deferred scripts to maximize load efficiency. Handled asset loading to deliver an optimal score for Core Web Vitals.
-                </p>
-              </li>
-              <li className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <h3 className="text-cyan-400 font-semibold mb-2">SEO & Accessibility Integration</h3>
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                  Integrated metadata, semantic tags, and descriptive alternate tags. Conducted audits for WCAG accessibility guidelines to ensure accessibility for assistive screens while maximizing organic search engine indexability.
+                  React.js, Next.js, TypeScript, and Tailwind CSS.
                 </p>
               </li>
             </ul>
@@ -155,19 +136,13 @@ export default function MatrixMindsProjectPage() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-bold text-white">Technologies & Concepts Applied</h2>
+            <h2 className="text-2xl font-bold text-white">Tech Stack</h2>
             <div className="flex flex-wrap gap-2 pt-2">
               {[
                 "React.js",
                 "Next.js",
                 "TypeScript",
-                "Tailwind CSS",
-                "Figma to Code",
-                "Mobile-First Design",
-                "SEO Optimization",
-                "WCAG Accessibility",
-                "Core Web Vitals",
-                "Component-Based Architecture"
+                "Tailwind CSS"
               ].map((tech, i) => (
                 <span
                   key={i}

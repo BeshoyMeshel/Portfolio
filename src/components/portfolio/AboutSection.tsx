@@ -21,7 +21,6 @@ export function AboutSection() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
             About <span className="text-blue-500">Me</span>
           </h2>
-
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
         </motion.div>
 
@@ -36,34 +35,21 @@ export function AboutSection() {
             className="space-y-6 text-gray-300 text-lg leading-relaxed"
           >
             <p>
-              I am a{" "}
-              <span className="text-white font-semibold">
-                Front-End Developer
-              </span>{" "}
-              experienced in building scalable web applications. With a deep
-              understanding of{" "}
-              <span className="text-blue-400 font-medium">
-                React.js, Next.js, TypeScript, JavaScript, HTML5, CSS3, and
-                Tailwind CSS
-              </span>
-              , I focus on crafting clean and accessible user interfaces.
+              Front-End Developer with 2+ years building responsive, scalable web apps in React.js, Next.js, and TypeScript.
             </p>
 
             <p>
-              I am highly skilled in Figma-to-code implementation, REST API
-              integration, responsive design, SEO, accessibility, and ensuring
-              cross-browser compatibility. My goal is always to deliver an
-              exceptional and performant user experience.
+              Shipped production dashboards and project-management platforms, translating Figma designs into pixel-accurate, accessible (WCAG) UIs. Fast at picking up new stacks and tools, with strong ability to use AI effectively to accelerate development while reviewing, understanding, and owning the resulting code.
             </p>
 
             <p>
-              Beyond coding, my background in Law from Assiut University has structured my analytical approach, attention to detail, and problem-solving framework. These attributes directly translate into writing maintainable, structured logic and designing robust components.
+              Bachelor of Law, Assiut University — career transition into Front-End Development via intensive project-based learning with React.js, Next.js, and TypeScript.
             </p>
 
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/Beshoy-Meshel_Front-End-Developer_CV.pdf"
+              href="/Beshoy-Meshel-Front-End_developer.pdf"
               download
               className="inline-flex items-center gap-3 mt-4 bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-xl text-white font-medium backdrop-blur-md transition-colors"
             >
@@ -83,19 +69,20 @@ export function AboutSection() {
             {/* Experience */}
             <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
               <span className="text-xs text-blue-400 font-semibold tracking-wider uppercase block mb-1">Experience</span>
-              <h3 className="text-white font-bold text-xl mb-2">2+ Years</h3>
+              <h3 className="text-white font-bold text-xl mb-2">2+ years</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Building responsive web apps, dashboards, and SaaS platforms.
+                Shipped production dashboards and project-management platforms.
               </p>
             </div>
 
             {/* Core Competencies */}
             <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors">
-              <span className="text-xs text-purple-400 font-semibold tracking-wider uppercase block mb-1">Deliverables</span>
-              <h3 className="text-white font-bold text-xl mb-2">Shipped Apps</h3>
+              <span className="text-xs text-purple-400 font-semibold tracking-wider uppercase block mb-1">Certification</span>
+              <h3 className="text-white font-bold text-xl mb-2">Claude Code 101</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Delivered secure user-facing systems and high-performance corporate sites.
+                Anthropic (2026)
               </p>
+              <a href="https://verify.skilljar.com/c/euj8v6b6jeva" target="_blank" rel="noreferrer" className="text-blue-400 text-sm mt-3 inline-block">Verify certification</a>
             </div>
 
             {/* Education */}
@@ -113,7 +100,7 @@ export function AboutSection() {
               <span className="text-xs text-green-400 font-semibold tracking-wider uppercase block mb-1">Languages</span>
               <ul className="text-gray-300 text-sm space-y-1.5 mt-2">
                 <li><span className="text-white font-medium">Arabic:</span> Native</li>
-                <li><span className="text-white font-medium">English:</span> Professional Proficiency</li>
+                <li><span className="text-white font-medium">English:</span> Professional Working Proficiency</li>
               </ul>
             </div>
 

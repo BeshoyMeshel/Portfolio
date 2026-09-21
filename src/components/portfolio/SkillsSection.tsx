@@ -36,7 +36,7 @@ export function SkillsSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto mb-4"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A comprehensive list of technologies and tools I work with to build robust, modern web applications.
+            Frontend, Backend (Working Knowledge), UI & Styling, Tools & Workflow, State Management, Core Concepts.
           </p>
         </motion.div>
 
@@ -55,13 +55,7 @@ export function SkillsSection() {
               className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-white/10 hover:border-cyan-500/30 transition-all cursor-default group backdrop-blur-sm shadow-lg"
             >
               <div className="relative w-16 h-16 flex items-center justify-center group-hover:drop-shadow-[0_0_15px_rgba(34,211,238,0.5)] transition-all duration-300">
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  width={48}
-                  height={48}
-                  className="object-contain"
-                />
+                <Image src={logo.src} alt={logo.name} width={48} height={48} className="object-contain" />
               </div>
               <p className="text-gray-300 font-medium text-sm text-center group-hover:text-white transition-colors">
                 {logo.name}
@@ -79,9 +73,9 @@ export function SkillsSection() {
           className="mt-20 space-y-8"
         >
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-2">Specialized Expertise</h3>
+            <h3 className="text-2xl font-bold text-white mb-2">Technical Skills</h3>
             <p className="text-gray-400 text-sm max-w-xl mx-auto">
-              Deep-dive skill categories and core engineering practices from my professional background.
+              React.js, Next.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Node.js, Express.js, REST API Design, Tailwind CSS, Responsive Design, Mobile-First, Accessibility (WCAG), Figma to Code, Git, GitHub, REST APIs, Vercel, Cursor, ChatGPT, Claude, Context API, React Hooks, Component-Based Architecture, Reusable Components, API Integration, Performance Optimization.
             </p>
           </div>
 

@@ -14,7 +14,7 @@ export function ContactSection() {
       color: "text-green-400",
       glowClass: "hover:shadow-[0_0_30px_rgba(74,222,128,0.15)] hover:border-green-400/30",
       actionText: "Email me",
-      desc: "Available for contract & permanent roles"
+      desc: ""
     },
     {
       icon: <FiPhone className="text-2xl" />,
@@ -23,8 +23,8 @@ export function ContactSection() {
       href: "tel:+201275809921",
       color: "text-blue-400",
       glowClass: "hover:shadow-[0_0_30px_rgba(96,165,250,0.15)] hover:border-blue-400/30",
-      actionText: "Call directly",
-      desc: "Mon - Fri, 9 AM - 6 PM (GMT+2)"
+      actionText: "Phone",
+      desc: ""
     },
     {
       icon: <FiMapPin className="text-2xl" />,
@@ -33,8 +33,8 @@ export function ContactSection() {
       href: null,
       color: "text-purple-400",
       glowClass: "hover:shadow-[0_0_30px_rgba(192,132,252,0.15)] hover:border-purple-400/30",
-      actionText: "Cairo & Remote",
-      desc: "Available for local & global projects"
+      actionText: "Cairo, Egypt",
+      desc: ""
     }
   ];
 
@@ -44,14 +44,14 @@ export function ContactSection() {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/beshoy-meshel-8177bb268/",
       color: "hover:text-[#0077b5] hover:bg-[#0077b5]/10 hover:border-[#0077b5]/30",
-      handle: "/in/beshoy-meshel"
+      handle: "linkedin.com/in/beshoy-meshel-8177bb268"
     },
     {
       icon: <FaGithub className="text-xl" />,
       label: "GitHub",
       href: "https://github.com/BeshoyMeshel",
       color: "hover:text-white hover:bg-white/10 hover:border-white/20",
-      handle: "@BeshoyMeshel"
+      handle: "github.com/BeshoyMeshel"
     }
   ];
 
@@ -93,9 +93,8 @@ export function ContactSection() {
             Get in <span className="text-green-400">Touch</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-6">
-            Looking for a Front-End Developer to join your team or build a high-performance web experience? Let&apos;s connect and discuss how I can help.
+            Front-End Developer with 2+ years building responsive, scalable web apps in React.js, Next.js, and TypeScript.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mx-auto"></div>
         </motion.div>
 
         {/* Contact Cards Grid */}
@@ -119,12 +118,14 @@ export function ContactSection() {
                   <p className="text-xl font-bold text-white mb-3 break-all tracking-tight leading-snug group-hover:text-white transition-colors">
                     {item.value}
                   </p>
-                  <p className="text-sm text-gray-400 leading-relaxed">
-                    {item.desc}
-                  </p>
+                  {item.desc && (
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  )}
                 </div>
                 {item.href && (
-                  <div className="mt-8 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500 group-hover:text-white transition-colors duration-300">
+                    <div className="mt-8 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500 group-hover:text-white transition-colors duration-300">
                     <span>{item.actionText}</span>
                     <FiArrowUpRight className="text-sm transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                   </div>
@@ -161,9 +162,9 @@ export function ContactSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="bg-white/[0.01] border border-white/[0.05] rounded-3xl p-8 backdrop-blur-md max-w-2xl mx-auto text-center w-full"
         >
-          <h4 className="text-lg font-semibold text-white mb-2">Connect on Professional Platforms</h4>
+          <h4 className="text-lg font-semibold text-white mb-2">LinkedIn · GitHub</h4>
           <p className="text-sm text-gray-400 mb-8 max-w-md mx-auto">
-            Explore my code repositories, contributions, and professional background.
+            linkedin.com/in/beshoy-meshel-8177bb268 · github.com/BeshoyMeshel
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             {socialLinks.map((link, idx) => (
@@ -172,7 +173,7 @@ export function ContactSection() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className={`flex items-center justify-between gap-6 px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] text-gray-300 transition-all duration-300 font-medium ${link.color} group`}
+                className={`flex items-center justify-between gap-6 px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] text-gray-300 transition-all duration-300 ${link.color} group`}
               >
                 <div className="flex items-center gap-4">
                   <div className="text-xl">{link.icon}</div>

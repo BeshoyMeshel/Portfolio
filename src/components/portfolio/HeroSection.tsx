@@ -23,16 +23,15 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-sm font-medium tracking-wide backdrop-blur-sm"
           >
-            <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
             FRONT-END DEVELOPER
           </motion.div>
 
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
-              Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Modern</span> Web Apps
+              Beshoy Meshel Saad
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-              Hi, I&apos;m <span className="text-white font-semibold">Beshoy Meshel Saad</span>. I am a Front-End Developer with 2 years of experience building responsive, scalable web applications using React.js, Next.js, and TypeScript. I specialize in translating design concepts into clean, accessible user interfaces.
+              Front-End Developer with 2+ years building responsive, scalable web apps in React.js, Next.js, and TypeScript. Shipped production dashboards and project-management platforms, translating Figma designs into pixel-accurate, accessible (WCAG) UIs. Fast at picking up new stacks and tools, with strong ability to use AI effectively to accelerate development while reviewing, understanding, and owning the resulting code.
             </p>
           </div>
 
@@ -91,7 +90,7 @@ export function HeroSection() {
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-110 grayscale hover:grayscale-0"
               />
-            </div>
+              </div>
           </div>
         </motion.div>
 
